@@ -1,24 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text);
+  background-color: var(--background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+@theme{
+  --color-text: #363333;
+  --color-ltext: #dddada;
+  --color-dbackground: #04111b;
+  --color-background: #fcf8f8;
+  --color-primary: #f7363d;
+  --color-secondary: #fb9da0;
+  --color-accent: #f8494f;
 }
 
 @layer base {
   :root {
     --text: #363333;
+  --color-ltext: #dddada;
+
+    --dbackground: #04111b;
     --background: #fcf8f8;
+    --primary: #f7363d;
+    --secondary: #fb9da0;
+    --accent: #f8494f;
+  }
+}
+
+
+/* @layer base {
+  :root {
+    --text: #0c2320;
+    --dbackground:#0c2a3e;
+    --background: #f0f0f0;
     --primary: #f7363d;
     --secondary: #fb9da0;
     --accent: #f8494f;
@@ -30,18 +60,6 @@
     --secondary: #620407;
     --accent: #b6070c;
   }
-}
+} */
 
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
