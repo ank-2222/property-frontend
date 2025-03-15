@@ -30,9 +30,9 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-[90vh] bg-dbackground ">
-      <div className="mx-auto flex flex-col md:flex-row  justify-center items-end h-full">
+      <div className="w-[90%] mx-auto flex flex-col md:flex-row  justify-center items-end h-full">
         {/* Left Content */}
-        <div className="w-full md:w-1/2 text-center md:text-left  px-20 py-10 flex flex-col justify-end items-left overflow-visible">
+        <div className="w-full md:w-1/2 text-center md:text-left py-10 flex flex-col justify-end items-left overflow-visible">
           <motion.h1
             key={currentPhrase}
             initial={{ opacity: 0, y: 10 }}
@@ -54,7 +54,7 @@ const Hero = () => {
           </p>
           
           {/* Search Bar */}
-          <div className="flex justify-center items-center gap-4 mt-6 bg-background rounded-[0.4rem] p-2 max-w-full relative z-[999]">
+          <div className="flex justify-center items-center gap-4 mt-6 bg-background rounded-[0.4rem] p-2 max-w-full relative z-[997]">
             <MapPin />
             <input
               className="flex-1 h-[40px] bg-background focus:border-0 focus:outline-0 "
@@ -86,9 +86,9 @@ const Hero = () => {
         {/* Right Parallax Image */}
         <div className="w-full md:w-1/2 relative ">
           <img
-            src="/asset/herobg6.jpg"
+            src="/assets/herobg6.jpg"
             alt="Luxury Home"
-            className="max-w-[450px]  2xl:max-w-[600px] 3xl:max-w-[800px]  rounded-t-full bg-background shadow-2xl shadow-dbackground absolute -bottom-15 left-10 xl:left-30 z-[998] "
+            className="max-w-[450px]  2xl:max-w-[550px] 3xl:max-w-[800px]  rounded-t-full bg-background shadow-2xl shadow-dbackground absolute -bottom-15 left-10 xl:left-30 z-[998] "
           />
         </div>
       </div>
