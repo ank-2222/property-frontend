@@ -48,7 +48,7 @@ const Hero = () => {
           </motion.h1>
 
 
-          <p className="mt-6 text-lg 2xl:text-xl 3xl:text-3xl text-ltext font-regular">
+          <p className="mt-6 text-lg 2xl:text-2xl 3xl:text-3xl text-ltext font-regular">
             Unlock <span className="text-primary ">exclusive properties</span>{" "}
             in prime locations – Your dream home awaits!
           </p>
@@ -69,15 +69,15 @@ const Hero = () => {
           {/* Property Stats */}
           <div className="mt-8 flex justify-center md:justify-start gap-6 text-ltext">
             <div>
-              <h3 className="text-2xl 3xl:text-4xl font-bold text-primary">1200+</h3>
+              <h3 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary">1200+</h3>
               <p className="text-sm">Properties Listed</p>
             </div>
             <div>
-              <h3 className="text-2xl 3xl:text-4xl font-bold text-primary">300+</h3>
+              <h3 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary">300+</h3>
               <p className="text-sm">Happy Clients</p>
             </div>
             <div>
-              <h3 className="text-2xl 3xl:text-4xl font-bold text-primary">10+</h3>
+              <h3 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary">10+</h3>
               <p className="text-sm">Years of Experience</p>
             </div>
           </div>
