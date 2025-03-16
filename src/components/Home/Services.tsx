@@ -6,7 +6,7 @@ const services = [
     title: "Residential",
     description:
       "Prime and Super-Prime UAE properties for sale, expert buying and selling advice, and branded residences project marketing.",
-    icon: <Home size={32} className="text-primary" />,
+    icon: <Home size={24} className="text-primary" />,
     image: "/assets/herobg2.jpg",
   },
   {
@@ -14,7 +14,7 @@ const services = [
     title: "Commercial",
     description:
       "Tailored investment, agency, transaction, and management services for investors, developers, owners, and occupiers.",
-    icon: <Building size={32} className="text-primary" />,
+    icon: <Building size={24} className="text-primary" />,
     image: "/assets/herobg4.jpg",
   },
   {
@@ -22,7 +22,7 @@ const services = [
     title: "Advisory & Consultancy",
     description:
       "Comprehensive asset management, valuations, and consultancy services across various real estate sectors.",
-    icon: <ClipboardList size={32} className="text-primary" />,
+    icon: <ClipboardList size={24} className="text-primary" />,
     image: "/assets/herobg3.jpg",
   },
 ];

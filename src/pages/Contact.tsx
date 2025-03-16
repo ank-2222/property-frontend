@@ -104,7 +104,7 @@ const Contact = () => {
                 rows={4}
                 className="bg-white border-gray-300 focus:ring-primary"
               />
-              <Button className="w-full bg-primary hover:bg-primary/90 transition">
+              <Button className="w-full text-white bg-primary hover:bg-primary/90 transition">
                 Send Message
               </Button>
             </form>

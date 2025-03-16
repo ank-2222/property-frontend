@@ -15,19 +15,19 @@ const AboutUs = () => {
 
           {/* Highlights */}
           <div className="mt-6 space-y-4">
-            <div className="flex items-center gap-4">
+            <div className="flex items-start gap-4 justify-start">
               <Briefcase size={28} className="text-primary" />
               <p className="text-text text-lg">
                 <strong>10+ Years of Expertise</strong> in UAE's property market.
               </p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-start gap-4 justify-start">
               <Building2 size={28} className="text-primary" />
               <p className="text-text text-lg">
                 <strong>Luxury Properties</strong> in prime locations.
               </p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-start gap-4 justify-start">
               <ShieldCheck size={28} className="text-primary" />
               <p className="text-text text-lg">
                 <strong>Trusted by Investors</strong> for seamless transactions.
