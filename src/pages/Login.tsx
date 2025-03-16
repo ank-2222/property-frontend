@@ -3,12 +3,10 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [, setShowForgotPassword] = useState(false);
   const [showContact, setShowContact] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +15,6 @@ const Login = () => {
 
   return (
     <>
-    {/* <Navbar/> */}
     <div
       className="relative flex min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('/assets/herobg5.jpg')" }}
@@ -163,7 +160,6 @@ const Login = () => {
         </div>
       )}
     </div>
-    {/* <Footer/> */}
     </>
   );
 };
