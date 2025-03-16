@@ -82,8 +82,8 @@ const ExploreProjects = () => {
               className="w-full h-[250px] object-cover"
             />
             <div className="p-5">
-              <h3 className="text-xl font-semibold text-text h-[50px] leading-6 ">{project.name}</h3>
-              <div className="flex items-center text-gray-400  mt-1">
+              <h3 className="text-lg font-medium text-text h-[45px] leading-5 ">{project.name}</h3>
+              <div className="flex items-center text-gray-400 text-sm mt-1">
                 <MapPin size={16} className="mr-1 text-primary" />
                 {project.location}
               </div>
@@ -92,7 +92,7 @@ const ExploreProjects = () => {
                   <BedDouble size={16} className="text-primary" />
                   <span>{project.beds} Beds</span>
                 </div>
-                <p className="text-lg font-bold text-primary">{project.price}</p>
+                <p className="text-md font-bold text-primary">{project.price}</p>
               </div>
               <button className="w-full mt-4 bg-dbackground text-white font-semibold py-2 rounded-md hover:bg-dbackground/90 transition flex justify-center items-center gap-x-1">
                 Contact Now <ArrowUpRight size={20} />
