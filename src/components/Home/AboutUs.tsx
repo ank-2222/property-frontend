@@ -1,47 +1,41 @@
-import { Briefcase, Building2, ShieldCheck } from "lucide-react";
 
 const AboutUs = () => {
   return (
-    <section className="py-16 bg-background px-4 md:px-12 lg:px-20 xl:px-32">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Left Side - Content */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-text">
-            About Us – Your Gateway to Luxury Living in UAE 🇦🇪
+    <section className="bg-[#111] text-white py-16 px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
+        {/* Left Content */}
+        <div className="lg:w-1/2">
+          <h1 className="text-3xl text-red-500 uppercase font-semibold  ">
+            About Us
+          </h1>
+          <div className="w-[25%] h-1 bg-accent  my-4 mb-10 rounded-full" />
+          <h2 className="text-3xl lg:text-4xl font-bold mt-2">
+            Your trusted property partner for over{" "}
+            <span className="text-red-500">12 years.</span>
           </h2>
-          <p className="text-lg text-gray-400 mt-4">
-            With years of expertise in the UAE’s real estate market, we specialize in connecting discerning buyers with exclusive properties across Dubai and Abu Dhabi.
+          <p className="text-gray-300 mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
+            nisl eget consectetur sagittis, nisl nunc aliquet nunc, et egestas 
+            elit lectus non nunc. Vestibulum ante ipsum primis in faucibus orci luctus et.
           </p>
-
-          {/* Highlights */}
-          <div className="mt-6 space-y-4">
-            <div className="flex items-start gap-4 justify-start">
-              <Briefcase size={28} className="text-primary" />
-              <p className="text-text text-lg">
-                <strong>10+ Years of Expertise</strong> in UAE's property market.
-              </p>
-            </div>
-            <div className="flex items-start gap-4 justify-start">
-              <Building2 size={28} className="text-primary" />
-              <p className="text-text text-lg">
-                <strong>Luxury Properties</strong> in prime locations.
-              </p>
-            </div>
-            <div className="flex items-start gap-4 justify-start">
-              <ShieldCheck size={28} className="text-primary" />
-              <p className="text-text text-lg">
-                <strong>Trusted by Investors</strong> for seamless transactions.
-              </p>
-            </div>
-          </div>
+          <p className="text-gray-300 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis turpis 
+            feugiat, scelerisque ligula id, venenatis odio.
+          </p>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 text-red-500 font-medium mt-6 hover:underline"
+          >
+            Our Services →
+          </a>
         </div>
 
-        {/* Right Side - Image */}
-        <div className="relative w-full h-[400px]">
+        {/* Right Image */}
+        <div className="lg:w-1/2">
           <img
-            src="/assets/herobg.jpg"
-            alt="Luxury UAE Property"
-            className="rounded-lg shadow-lg object-cover w-full h-full"
+            src="/assets/about.jpg" // Change to actual image path
+            alt="About Us"
+            className="rounded-lg w-full max-h-[500px] object-cover "
           />
         </div>
       </div>

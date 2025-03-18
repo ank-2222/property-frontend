@@ -68,7 +68,7 @@ body::-webkit-scrollbar{
 
 @layer base {
   :root {
-    --text: #363333;
+    --text: #04111b;
   --color-ltext: #dddada;
 
     --dbackground: #04111b;

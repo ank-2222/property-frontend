@@ -1,108 +1,65 @@
-import { MapPin, BedDouble,  ArrowUpRight } from "lucide-react";
+import { Carousel } from "../ui/carousel";
+import { Button } from "../ui/button";
 
-const projects = [
+const slides = [
   {
-    id: 1,
-    name: "Burj Khalifa Residences",
-    location: "Downtown Dubai, UAE",
-    image: "/assets/herobg.jpg",
-    beds: 3,
-    price: "AED 7,500,000",
+    title: "Luxury Beachfront Villas",
+    button: "View Details",
+    src: "/assets/discover1.jpg",
   },
   {
-    id: 2,
-    name: "Palm Jumeirah Sky Villas",
-    location: "Palm Jumeirah, Dubai",
-    image: "/assets/herobg2.jpg",
-
-    beds: 5,
-    price: "AED 15,200,000",
+    title: "Modern City Apartments",
+    button: "Explore Now",
+    src: "/assets/discover2.jpg",
   },
   {
-    id: 3,
-    name: "Emaar Beachfront Apartments",
-    location: "Dubai Harbour, UAE",
-    image: "/assets/herobg3.jpg",
-
-    beds: 2,
-    price: "AED 3,800,000",
+    title: "Elegant Suburban Homes",
+    button: "See More",
+    src: "/assets/discover3.jpg",
   },
   {
-    id: 4,
-    name: "Al Raha Beach Mansions",
-    location: "Abu Dhabi, UAE",
-    image: "/assets/herobg4.jpg",
-
-    beds: 4,
-    price: "AED 10,500,000",
-  },
-  {
-    id: 5,
-    name: "Jumeirah Golf Estates Villas",
-    location: "Jumeirah, Dubai",
-    image: "/assets/herobg5.jpg",
-
-    beds: 6,
-    price: "AED 18,900,000",
-  },
-  {
-    id: 6,
-    name: "Dubai Creek Harbour Residences",
-    location: "Dubai Creek, UAE",
-    image: "/assets/herobg7.jpg",
-
-    beds: 2,
-    price: "AED 4,200,000",
+    title: "Commercial Office Spaces",
+    button: "Discover",
+    src: "/assets/discover4.jpg",
   },
 ];
 
-const ExploreProjects = () => {
+function ExploreProject() {
   return (
-    <section className="py-16 mt-30 bg-background px-4 md:px-12 lg:px-20 xl:px-32">
-      {/* Title & Subtitle */}
-      <div className="text-left py-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-text">
-          Explore New Luxury Projects in UAE 🇦🇪
-        </h2>
-        <p className="text-lg md:text-xl text-gray-400 mt-3">
-          Discover high-end properties in Dubai & Abu Dhabi’s prime locations.
-        </p>
-      </div>
+    <div className="w-full  py-10 mt-0 lg:mt-40 relative bg-[url('/assets/hero2.jpg')] bg-accent bg-cover bg-center bg-no-repeat flex items-center justify-center">
+      {/* Dark Overlay */}
+      <div className="bg-black w-full h-full absolute top-0 left-0 opacity-40" />
 
-      {/* Project Grid */}
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="bg-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 max-w-[400px] h-[450px] "
-          >
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-full h-[250px] object-cover"
-            />
-            <div className="p-5">
-              <h3 className="text-lg font-medium text-text h-[45px] leading-5 ">{project.name}</h3>
-              <div className="flex items-center text-gray-400 text-sm mt-1">
-                <MapPin size={16} className="mr-1 text-primary" />
-                {project.location}
-              </div>
-              <div className="flex justify-between items-center mt-1">
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <BedDouble size={16} className="text-primary" />
-                  <span>{project.beds} Beds</span>
-                </div>
-                <p className="text-md font-bold text-primary">{project.price}</p>
-              </div>
-              <button className="w-full mt-4 bg-dbackground text-white font-semibold py-2 rounded-md hover:bg-dbackground/90 transition flex justify-center items-center gap-x-1">
-                Contact Now <ArrowUpRight size={20} />
-              </button>
-            </div>
+      {/* Content Section */}
+      <section className="relative z-10 text-center mx-2">
+        <div className="mx-auto p-4">
+          <h2 className="text-3xl lg:text-4xl text-white font-bold">
+            Discover Our <span className="text-[#f30606]">New Projects</span>
+          </h2>
+          <p className="text-white text-md lg:text-lg mt-2 max-w-[900px]  lg:mx-auto">
+            Explore the largest selection of home listings, backed by the most accurate and trustworthy information—right at your fingertips.
+          </p>
+        </div>
+
+        {/* Decorative Divider */}
+        <div className="w-16 h-1 bg-[#ff5959] mx-auto my-4 rounded-full" />
+
+        {/* Carousel Section */}
+        <div className="container mx-auto mt-10">
+          <div className="w-[600px] h-[400px] lg:h-[600px] 3xl:h-[1000px] 3xl:w-[1000px] mx-auto overflow-x-hidden">
+            <Carousel slides={slides} />
           </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+        </div>
 
-export default ExploreProjects;
+        {/* Call-to-Action Button */}
+        <div className="mt-2 lg:mt-6">
+          <Button className="bg-[#ff3b3b] text-white p-6 text-lg font-semibold hover:bg-white hover:text-[#ff3b3b] transition ">
+            View All Projects
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default ExploreProject;

@@ -37,8 +37,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-semibold tracking-wide">
-          <span className="text-primary">Property</span>App
+        <Link to="/" className="text-2xl font-semibold tracking-wide text-primary">
+          Monarch Real Estate
         </Link>
 
         {/* Desktop Menu */}

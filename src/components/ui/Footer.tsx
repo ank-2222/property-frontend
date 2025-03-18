@@ -8,7 +8,7 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div>
-            <h2 className="text-2xl font-bold text-primary">Spot Estate</h2>
+            <h2 className="text-2xl font-bold text-primary">Monarch Real Estate</h2>
             <p className="text-gray-400 mt-2 text-sm">
               Discover premium real estate options with us. Your dream home is just a click away.
             </p>

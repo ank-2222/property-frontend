@@ -1,98 +1,63 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+"use client";
+import { useState, useEffect } from "react";
 import { MapPin, Search } from "lucide-react";
 
-const phrases = [
-  "Find Your Dream Home",
-  "Invest in Your Future",
-  "Discover Luxury Living",
-  "Your Perfect Property Awaits",
-];
+const images = ["/assets/h1.jpg", "/assets/h2.jpg","/assets/herobg.jpg","/assets/herobg3.jpg"]; // Add more images if needed
 
 const Hero = () => {
-  const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
-  const [, setFade] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(true);
-      setTimeout(() => {
-        setCurrentPhrase((prev) => {
-          const nextIndex = (phrases.indexOf(prev) + 1) % phrases.length;
-          return phrases[nextIndex];
-        });
-        setFade(false);
-      }, 500);
-    }, 4000);
-
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative w-full h-[90vh] bg-dbackground ">
-      <div className="w-[90%] mx-auto flex flex-col md:flex-row  justify-center items-end h-full">
-        {/* Left Content */}
-        <div className="w-full md:w-1/2 text-center md:text-left py-10 flex flex-col justify-end items-left overflow-visible">
-          <motion.h1
-            key={currentPhrase}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold text-ltext"
-          >
-            {currentPhrase.split(" ").map((word, index) => (
-              <span key={index} className={index === 2 ? "text-primary" : ""}>
-                {word}{" "}
-              </span>
-            ))}
-          </motion.h1>
+    <div className="relative w-full h-screen overflow-hidden flex justify-center items-center">
+      {/* Background Image Slider */}
+      <div
+        className="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="Hero Background"
+            className="w-full h-full object-cover flex-shrink-0"
+            style={{ minWidth: "100%" }}
+          />
+        ))}
+      </div>
 
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
-          <p className="mt-6 text-lg 2xl:text-2xl 3xl:text-3xl text-ltext font-regular">
-            Unlock <span className="text-primary ">exclusive properties</span>{" "}
-            in prime locations – Your dream home awaits!
-          </p>
-          
-          {/* Search Bar */}
-          <div className="flex justify-center items-center gap-4 mt-6 bg-background rounded-[0.4rem] p-2 max-w-full relative z-[997]">
+      {/* Content Box */}
+      <div className=" z-20 flex flex-col items-center justify-center bg-background w-[95vw] lg:w-[40%] text-textDark py-10 px-6 rounded-xl mx-auto mt-50">
+        <h2 className="text-3xl lg:text-4xl font-bold text-primaryDark">
+          Find your <span className="text-primary">dream</span> home
+        </h2>
+        <p className="text-lg lg:text-xl mt-2 text-text">
+          Search properties by location
+        </p>
+
+        {/* Search Bar */}
+        <div className="flex justify-center items-center gap-4 mt-6 bg-secondary/40 rounded-[0.4rem] p-2 max-w-full relative z-[997] text-text">
             <MapPin />
             <input
-              className="flex-1 h-[40px] bg-background focus:border-0 focus:outline-0 "
+              className="flex-1 h-[40px] bg-none focus:border-0 focus:outline-0 "
               placeholder="Location"
             />
-            <button className="flex justify-center items-center gap-x-1 bg-secondary py-2 px-4 rounded-[0.4rem] text-text ">
+            <button className="flex justify-center items-center gap-x-1 bg-primary py-2 px-4 rounded-[0.4rem] text-ltext font-medium ">
               <Search size={18} />
               Search
             </button>
           </div>
-
-          {/* Property Stats */}
-          <div className="mt-8 flex justify-center md:justify-start gap-6 text-ltext">
-            <div>
-              <h3 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary">1200+</h3>
-              <p className="text-sm">Properties Listed</p>
-            </div>
-            <div>
-              <h3 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary">300+</h3>
-              <p className="text-sm">Happy Clients</p>
-            </div>
-            <div>
-              <h3 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary">10+</h3>
-              <p className="text-sm">Years of Experience</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Parallax Image */}
-        <div className="w-full md:w-1/2 relative ">
-          <img
-            src="/assets/herobg6.jpg"
-            alt="Luxury Home"
-            className="max-w-[450px]  2xl:max-w-[550px] 3xl:max-w-[800px]  rounded-t-full bg-background shadow-2xl shadow-dbackground absolute -bottom-15 left-10 xl:left-30 z-[998] "
-          />
-        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
