@@ -36,7 +36,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
       {/* Content Box */}
-      <div className=" z-20 flex flex-col items-center justify-center bg-background w-[95vw] lg:w-[40%] text-textDark py-10 px-6 rounded-xl mx-auto mt-50">
+      <div className=" z-20 flex flex-col items-start md:items-center justify-center bg-background w-[95vw] lg:w-[40%] text-textDark py-10 px-6 rounded-xl mx-auto mt-50">
         <h2 className="text-3xl lg:text-4xl font-bold text-primaryDark">
           Find your <span className="text-primary">dream</span> home
         </h2>

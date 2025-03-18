@@ -26,7 +26,7 @@ const slides = [
 
 function ExploreProject() {
   return (
-    <div className="w-full  py-10 mt-0 lg:mt-40 relative bg-[url('/assets/hero2.jpg')] bg-accent bg-cover bg-center bg-no-repeat flex items-center justify-center">
+    <div className="w-full overflow-x-hidden py-10 mt-0 lg:mt-40 relative bg-[url('/assets/hero2.jpg')] bg-accent bg-cover bg-center bg-no-repeat flex items-center justify-center">
       {/* Dark Overlay */}
       <div className="bg-black w-full h-full absolute top-0 left-0 opacity-40" />
 
