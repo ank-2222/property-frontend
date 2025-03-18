@@ -8,7 +8,7 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div>
-            <h2 className="text-2xl font-bold text-primary">Monarch Real Estate</h2>
+            <h2 className="text-2xl font-bold text-primary">Monarch Hill Real Estate</h2>
             <p className="text-gray-400 mt-2 text-sm">
               Discover premium real estate options with us. Your dream home is just a click away.
             </p>
@@ -56,7 +56,7 @@ const Footer = () => {
 
         {/* Social Media & Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-gray-700 pt-6">
-          <p className="text-gray-400 text-sm">&copy; 2025 Monarch Real Estate. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">&copy; 2025 Monarch Hill Real Estate. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-primary transition"><FaFacebookF /></a>
             <a href="#" className="text-gray-400 hover:text-primary transition"><FaTwitter /></a>

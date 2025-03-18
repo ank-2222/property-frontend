@@ -24,9 +24,9 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Listings", path: "/listings" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Properties", path: "/listings" },
+    { name: "Our Story", path: "/about" },
+    { name: "get in touch", path: "/contact" },
   ];
   const handleScrollToAdvertise = () => {
     const element = document.getElementById("advertise");
@@ -50,7 +50,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <Link to="/" className="text-2xl font-semibold tracking-wide text-primary">
-          Monarch Real Estate
+        Monarch Hill Real Estate
         </Link>
 
         {/* Desktop Menu */}

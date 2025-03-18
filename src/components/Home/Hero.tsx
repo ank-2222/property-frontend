@@ -37,7 +37,7 @@ const Hero = () => {
 
       {/* Content Box */}
       <div className="z-20 flex flex-col items-start md:items-center justify-center 
-    bg-background/10 backdrop-blur-lg w-[95vw] lg:w-[40%] text-textDark 
+    bg-background/5 backdrop-blur-sm w-[95vw] lg:w-[40%] text-textDark 
     py-10 px-6 rounded-xl mx-auto mt-50 shadow-lg border border-white/20">
     
     <h2 className="text-3xl lg:text-4xl font-bold text-ltext">
@@ -49,7 +49,7 @@ const Hero = () => {
     </p>
 
     {/* Search Bar */}
-    <div className="flex justify-center items-center gap-4 mt-6 bg-secondary/40 rounded-[0.4rem] 
+    <div className="flex justify-center items-center gap-4 mt-6 bg-white/40 rounded-[0.4rem] 
         p-2 max-w-full relative z-[997] text-text backdrop-blur-md">
         <MapPin className="text-ltext" />
         <input
