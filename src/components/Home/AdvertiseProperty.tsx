@@ -25,7 +25,7 @@ const AdvertiseProperty = () => {
   };
 
   return (
-    <div className="container mx-auto p-6 max-w-3xl bg-white shadow-lg rounded-lg mt-10">
+    <div id="advertise" className="container mx-auto p-6 max-w-3xl bg-white shadow-lg rounded-lg mt-10">
       <h2 className="text-3xl font-bold text-gray-800 text-center">
         Advertise Your <span className="text-[#ff3b3b]">Property</span>
       </h2>

@@ -28,7 +28,19 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
-
+  const handleScrollToAdvertise = () => {
+    const element = document.getElementById("advertise");
+    if (element) {
+      const offset = 80; // Adjust as needed
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+    }
+  };
+  
   return (
     <nav
       className={`bg-dbackground z-[999] text-ltext fixed w-full top-0 transition-transform duration-300 ${
@@ -67,12 +79,14 @@ const Navbar = () => {
               }`}
             >
               <li>
-                <Link
-                  to="/services"
-                  className="block px-4 py-2 text-sm hover:bg-primary hover:text-white transition"
+                <button
+                  // to="/services"
+                  // href="#advertise"
+                  onClick={handleScrollToAdvertise}
+                  className="block px-4 py-2 text-sm text-left hover:bg-primary hover:text-white transition"
                 >
-                  Services
-                </Link>
+                  Advertise Your Property
+                </button>
               </li>
               <li>
                 <Link
