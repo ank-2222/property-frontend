@@ -36,27 +36,34 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
       {/* Content Box */}
-      <div className=" z-20 flex flex-col items-start md:items-center justify-center bg-background w-[95vw] lg:w-[40%] text-textDark py-10 px-6 rounded-xl mx-auto mt-50">
-        <h2 className="text-3xl lg:text-4xl font-bold text-primaryDark">
-          Find your <span className="text-primary">dream</span> home
-        </h2>
-        <p className="text-lg lg:text-xl mt-2 text-text">
-          Search properties by location
-        </p>
+      <div className="z-20 flex flex-col items-start md:items-center justify-center 
+    bg-background/10 backdrop-blur-lg w-[95vw] lg:w-[40%] text-textDark 
+    py-10 px-6 rounded-xl mx-auto mt-50 shadow-lg border border-white/20">
+    
+    <h2 className="text-3xl lg:text-4xl font-bold text-ltext">
+      Find your <span className="text-primary">dream</span> home
+    </h2> 
 
-        {/* Search Bar */}
-        <div className="flex justify-center items-center gap-4 mt-6 bg-secondary/40 rounded-[0.4rem] p-2 max-w-full relative z-[997] text-text">
-            <MapPin />
-            <input
-              className="flex-1 h-[40px] bg-none focus:border-0 focus:outline-0 "
-              placeholder="Location"
-            />
-            <button className="flex justify-center items-center gap-x-1 bg-primary py-2 px-4 rounded-[0.4rem] text-ltext font-medium ">
-              <Search size={18} />
-              Search
-            </button>
-          </div>
-      </div>
+    <p className="text-lg lg:text-xl mt-2 text-ltext">
+      Search properties by location
+    </p>
+
+    {/* Search Bar */}
+    <div className="flex justify-center items-center gap-4 mt-6 bg-secondary/40 rounded-[0.4rem] 
+        p-2 max-w-full relative z-[997] text-text backdrop-blur-md">
+        <MapPin className="text-ltext" />
+        <input
+          className="flex-1 font-regular h-[40px] text-ltext bg-transparent focus:border-0 focus:outline-0"
+          placeholder="Location"
+        />
+        <button className="flex justify-center items-center gap-x-1 bg-primary py-2 px-4 
+            rounded-[0.4rem] text-ltext font-medium">
+          <Search size={18} />
+          Search
+        </button>
+    </div>
+</div>
+
     </div>
   );
 };

@@ -31,7 +31,7 @@ const Footer = () => {
             <ul className="mt-3 space-y-2 text-gray-400 text-sm">
               <li>📍 Dubai, UAE</li>
               <li>📞 +971 123 456 789</li>
-              <li>✉ support@spotEstate.com</li>
+              <li>✉ support@monarchrealestate.com</li>
             </ul>
           </div>
 
