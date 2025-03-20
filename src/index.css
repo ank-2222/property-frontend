@@ -57,11 +57,18 @@ body::-webkit-scrollbar{
 }
 
 @theme{
-  --color-text: #363333;
+  /* --color-text: #363333;
   --color-ltext: #dddada;
   --color-dbackground: #04111b;
   --color-background: #fcf8f8;
   --color-primary: #f7363d;
+  --color-secondary: #fb9da0;
+  --color-accent: #f8494f; */
+  --color-text: #1A1A1A;
+  --color-ltext: #dddada;
+  --color-dbackground: #04111b;
+  --color-background: #fcf8f8;
+  --color-primary: #FF3B3B;
   --color-secondary: #fb9da0;
   --color-accent: #f8494f;
 }

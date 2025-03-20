@@ -1,5 +1,4 @@
 import { Carousel } from "../ui/carousel";
-import { Button } from "../ui/button";
 
 const slides = [
   {
@@ -34,10 +33,10 @@ function ExploreProject() {
       <section className="relative z-10 text-center mx-2">
         <div className="mx-auto p-4">
           <h2 className="text-3xl lg:text-4xl text-white font-bold">
-            Discover Our <span className="text-[#f30606]">New Projects</span>
+            Discover <span className="text-[#f30606]">New Projects</span>
           </h2>
           <p className="text-white text-md lg:text-lg mt-2 max-w-[900px]  lg:mx-auto">
-            Explore the largest selection of home listings, backed by the most accurate and trustworthy information—right at your fingertips.
+          Explore the latest off-plan developments in the market, complete with details on their features and expected completion dates.
           </p>
         </div>
 
@@ -52,11 +51,11 @@ function ExploreProject() {
         </div>
 
         {/* Call-to-Action Button */}
-        <div className="mt-2 lg:mt-6">
-          <Button className="bg-[#ff3b3b] text-white p-6 text-lg font-semibold hover:bg-white hover:text-[#ff3b3b] transition ">
+        {/* <div className="mt-2 lg:mt-6">
+          <Link to="/project" className="bg-[#ff3b3b] text-white p-6 text-lg font-semibold hover:bg-white hover:text-[#ff3b3b] transition ">
             View All Projects
-          </Button>
-        </div>
+          </Link>
+        </div> */}
       </section>
     </div>
   );

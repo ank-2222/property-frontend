@@ -13,11 +13,7 @@ const AdvertiseProperty = () => {
     setProperty({ ...property, [e.target.name]: e.target.value });
   };
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setProperty({ ...property, images: Array.from(e.target.files) });
-    }
-  };
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,10 +57,10 @@ const AdvertiseProperty = () => {
 
         {/* Price */}
         <div>
-          <label className="block text-gray-700 font-medium">Price (AED)</label>
+          <label className="block text-gray-700 font-medium">Bedrooms</label>
           <input
             type="number"
-            name="price"
+            name="No. of Bedrooms"
             value={property.price}
             onChange={handleInputChange}
             placeholder="Enter price"
@@ -73,28 +69,33 @@ const AdvertiseProperty = () => {
           />
         </div>
 
-        {/* Description */}
         <div>
-          <label className="block text-gray-700 font-medium">Description</label>
-          <textarea
-            name="description"
+          <label className="block text-gray-700 font-medium">Owner name</label>
+          <input
+            name="name"
             value={property.description}
             onChange={handleInputChange}
-            placeholder="Describe your property..."
-            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b] h-24"
+            placeholder="Name"
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b] "
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 font-medium">Contact Number</label>
+          <input
+            name="contact"
+            value={property.description}
+            onChange={handleInputChange}
+            placeholder="contact number"
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b] "
             required
           />
         </div>
 
-        {/* Image Upload */}
-        <div>
-          <label className="block text-gray-700 font-medium">Upload Images</label>
-          <input type="file" multiple accept="image/*" onChange={handleImageChange} className="w-full p-2 border rounded-md" />
-        </div>
-
+       
         {/* Submit Button */}
         <button type="submit" className="w-full bg-[#ff3b3b] text-white py-2 rounded-md hover:bg-red-600">
-          Submit Property
+          Submit 
         </button>
       </form>
     </div>

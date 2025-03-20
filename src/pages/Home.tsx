@@ -8,6 +8,7 @@ import Hero from "../components/Home/Hero"
 import Footer from "../components/ui/Footer"
 import Navbar from "../components/ui/Navbar"
 import ExploreProjects2 from "@/components/Home/ExploreProjects2"
+import Blog from "@/components/Home/Blog"
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function Home() {
 {/* <Banner/> */}
 <AdvertiseProperty/>
 <ExploreProperties/>
+<Blog/>
     </div>
     <Footer/>
     </>
