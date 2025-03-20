@@ -192,7 +192,7 @@ const ExploreProjects = () => {
   {selectedProject && (
     <DialogContent className="max-w-lg max-h-[90vh] bg-white p-6 rounded-xl shadow-xl overflow-y-auto ">
       <DialogHeader>
-        <DialogTitle className="text-2xl font-bold text-gray-800">
+        <DialogTitle className="text-2xl font-bold text-left text-gray-800">
           {selectedProject.name}
         </DialogTitle>
         <DialogDescription className="text-gray-600 flex items-center gap-2">

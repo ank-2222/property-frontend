@@ -4,12 +4,15 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./button";
 // import { RiWhatsappFill } from "react-icons/ri";
 import { motion } from "framer-motion";
+import EvaluateForm from "../Home/EvaluateForm";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
   let lastScrollY = 0;
 
   useEffect(() => {
@@ -74,7 +77,6 @@ const Navbar = () => {
       scrollToSection(id);
     }
   };
-
   return (
     <nav
       className={`bg-dbackground z-[40] text-ltext fixed w-full top-0 transition-transform duration-300 ${
@@ -159,9 +161,13 @@ const Navbar = () => {
         animate={{ rotate: [0, -3, 3, -1, 1, 0] }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <Button className="font-regular bg-transparent border-2  border-primary hover:bg-primary hover:text-white text-md font-semibold rounded-full px-5 py-2">
-          Evaluate my Property
-        </Button>
+       <button
+        onClick={() => setIsPopUpOpen(true)}
+    className="font-regular bg-transparent border-2  border-primary hover:bg-primary hover:text-white text-md font-semibold rounded-full px-5 py-2 transition-colors duration-200" 
+      >
+        Evaluate my Property
+      </button>
+      <EvaluateForm isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)} />
       </motion.div>
 
       {/* WhatsApp Button */}
