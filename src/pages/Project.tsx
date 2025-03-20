@@ -3,7 +3,7 @@ import Footer from "@/components/ui/Footer";
 import Navbar from "@/components/ui/Navbar";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { useEffect } from "react";
 const projects = [
   {
     id: 1,
@@ -58,6 +58,9 @@ const projects = [
 ];
 
 function Project() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <>
     <Navbar/>
