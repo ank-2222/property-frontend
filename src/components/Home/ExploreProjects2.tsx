@@ -143,10 +143,10 @@ const ExploreProjects = () => {
     <section className="py-20 bg-background px-4 md:px-12 lg:px-20 xl:px-32">
       <div className="text-left py-10">
         <h2 className="text-3xl md:text-4xl font-bold text-text">
-          Explore New Luxury Projects in UAE 🇦🇪
+        Explore Available Property Listings in Dubai 🇦🇪
         </h2>
         <p className="text-lg md:text-xl text-gray-400 mt-3">
-          Discover high-end properties in Dubai & Abu Dhabi’s prime locations.
+        Browse a comprehensive selection of properties across Dubai.
         </p>
       </div>
 
