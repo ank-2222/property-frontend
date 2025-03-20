@@ -154,8 +154,8 @@ const Hero = () => {
             >
               <Link
                 to={item.to}
-                className="flex justify-center items-center gap-x-1 bg-none border-2 rounded-full py-2 px-3 sm:px-4 
-                border-primary hover:bg-primary S text-ltext font-medium whitespace-nowrap text-sm sm:text-base"
+                className="flex justify-center items-center gap-x-1 bg-primary/50 border-2 rounded-full py-2 px-3 sm:px-4 
+                border-primary  S text-ltext font-medium whitespace-nowrap text-sm sm:text-base"
               >
                 <motion.span 
                   // className="hidden sm:block"

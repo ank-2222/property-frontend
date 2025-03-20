@@ -9,7 +9,7 @@ const ReadMoreText: React.FC<ReadMoreTextProps> = ({ text }) => {
 
   return (
     <div className="relative">
-      <p className={`text-dtext ${isExpanded ? "" : "line-clamp-2"} transition-all`}>
+      <p className={`text-dtext text-sm ${isExpanded ? "" : "line-clamp-2"} transition-all`}>
         {text}
       </p>
       <button
