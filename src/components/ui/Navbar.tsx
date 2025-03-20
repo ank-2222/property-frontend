@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./button";
-import { RiWhatsappFill } from "react-icons/ri";
+// import { RiWhatsappFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -165,7 +165,7 @@ const Navbar = () => {
       </motion.div>
 
       {/* WhatsApp Button */}
-      <a href="https://wa.me/00000" target="_blank" rel="noopener noreferrer">
+      {/* <a href="https://wa.me/00000" target="_blank" rel="noopener noreferrer">
         <motion.div
           initial={{ rotate: 0 }}
           animate={{ rotate: [0, -5, 5, -3, 3, 0] }}
@@ -173,18 +173,18 @@ const Navbar = () => {
         >
           <RiWhatsappFill className="text-green-600 text-4xl border-2 rounded-[0.4rem] p-1" />
         </motion.div>
-      </a>
+      </a> */}
     </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-3 ">
-          <a
+          {/* <a
             href="https://wa.me/00000"
             target="_blank"
             rel="noopener noreferrer"
           >
             <RiWhatsappFill className="text-green-600 text-3xl" />
-          </a>
+          </a> */}
           <button className="text-primary" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

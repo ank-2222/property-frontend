@@ -136,7 +136,7 @@ const Hero = () => {
 
         {/* Property Type Buttons with staggered animations */}
         <motion.div 
-          className="flex flex-row justify-center items-center gap-3 sm:gap-4"
+          className=" flex-row justify-center items-center gap-3 sm:gap-4 hidden md:flex"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.6 }}
