@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Home, Hotel, House, MapPin, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   "/assets/h1.jpg",
@@ -12,116 +13,172 @@ const images = [
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // Set loaded state after a small delay to ensure smooth initial animation
+    const loadTimer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 300);
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 10000); // Change image every 10 seconds
-    return () => clearInterval(interval);
+    
+    return () => {
+      clearInterval(interval);
+      clearTimeout(loadTimer);
+    };
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex flex-col justify-center items-center">
-      {/* Background Image Slider */}
-      <div
-        className="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((img, index) => (
+    <motion.div 
+      className="relative w-full h-screen overflow-hidden flex flex-col justify-center items-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Background Image Slider with AnimatePresence */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2 }}
+        >
           <img
-            key={index}
-            src={img}
+            src={images[currentIndex]}
             alt="Hero Background"
-            className="w-full h-full object-cover flex-shrink-0"
-            style={{ minWidth: "100%" }}
+            className="w-full h-full object-cover"
           />
-        ))}
-      </div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      <motion.div 
+        className="absolute inset-0 bg-black z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 1.5, delay: 0.3 }}
+      ></motion.div>
 
       {/* Main Container - Added padding for mobile */}
       <div className="z-20 flex flex-col items-center justify-center w-full px-4 md:px-6 space-y-6 md:space-y-8">
-        {/* Content Box */}
-        <div
+        {/* Content Box with staggered animations */}
+        <motion.div
           className="flex flex-col items-center justify-center 
           bg-background/5 backdrop-blur-sm w-full sm:w-[90%] md:w-[80%] lg:w-[50%] xl:w-[40%] text-textDark 
           py-6 md:py-8 lg:py-10 px-4 md:px-6 rounded-xl shadow-lg border border-white/20"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ 
+            duration: 0.8, 
+            delay: 0.5,
+            type: "spring",
+            stiffness: 100
+          }}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ltext text-center">
-            Find your <span className="text-primary">dream</span> home
-          </h2>
+          <motion.h2 
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ltext text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            Find your <motion.span 
+              className="text-primary"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >dream</motion.span> home
+          </motion.h2>
 
-          <p className="text-base sm:text-lg lg:text-xl mt-2 text-ltext text-center">
+          <motion.p 
+            className="text-base sm:text-lg lg:text-xl mt-2 text-ltext text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+          >
             Search properties by location
-          </p>
+          </motion.p>
 
-          {/* Search Bar - Made more responsive */}
-          <div
+          {/* Search Bar with animation */}
+          <motion.div
             className="flex flex-wrap items-center gap-2 mt-4 md:mt-6 bg-white/40 rounded-[0.4rem] 
   p-2 w-full relative z-40 text-text backdrop-blur-md"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
           >
             <div className="flex items-center flex-1 min-w-[200px]">
               <MapPin
-                className="text-ltext ml-1 mr-2 flex-shrink-0"
+                className="text-dbackground ml-1 mr-2 flex-shrink-0"
                 size={18}
               />
               <input
-                className="w-full font-regular h-10 text-ltext bg-transparent focus:border-0 focus:outline-0 text-sm sm:text-base"
+                className="w-full font-regular h-10 text-dbackground font-semibold bg-transparent focus:border-0 focus:outline-0 text-sm sm:text-base"
                 placeholder="Location"
               />
             </div>
-            <button
+            <motion.button
               className="flex justify-center items-center gap-x-1 bg-primary py-2 px-3 sm:px-4 
-    rounded-[0.4rem] text-ltext font-medium whitespace-nowrap text-sm sm:text-base ml-auto"
+                rounded-[0.4rem] text-ltext font-medium whitespace-nowrap text-sm sm:text-base ml-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Search size={16} className="mr-1" />
               Search
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
 
-        {/* Property Type Buttons - Made responsive */}
-        <div className="flex flex-row justify-center items-center gap-3 sm:gap-4">
-          <Link
-            to="/"
-            className="w-full sm:w-auto text-white bg-primary px-4 sm:px-6 md:px-8 py-2 text-base sm:text-lg md:text-xl font-regular rounded-[0.3rem] flex justify-center items-center gap-x-2"
-          >
-            <Hotel size={18} className="hidden sm:block" />
-            Sales
-          </Link>
-          <Link
-            to="/"
-            className="w-full sm:w-auto text-white bg-primary px-4 sm:px-6 md:px-8 py-2 text-base sm:text-lg md:text-xl font-regular rounded-[0.3rem] flex justify-center items-center gap-x-2"
-          >
-            <Home size={18} className="hidden sm:block" />
-            Rental
-          </Link>
-          <Link
-            to="/"
-            className="w-full sm:w-auto text-white bg-primary px-4 sm:px-6 md:px-8 py-2 text-base sm:text-lg md:text-xl font-regular rounded-[0.3rem] flex justify-center items-center gap-x-2"
-          >
-            <House size={18} className="hidden sm:block" />
-            Commercial
-          </Link>
-        </div>
+        {/* Property Type Buttons with staggered animations */}
+        <motion.div 
+          className="flex flex-row justify-center items-center gap-3 sm:gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.6 }}
+        >
+          {[
+            { to: "/", icon: <Hotel size={18} />, text: "Sales" },
+            { to: "/", icon: <Home size={18} />, text: "Rental" },
+            { to: "/", icon: <House size={18} />, text: "Commercial" }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 1.8 + index * 0.15 }}
+            >
+              <Link
+                to={item.to}
+                className="flex justify-center items-center gap-x-1 bg-primary py-2 px-3 sm:px-4 
+                rounded-[0.4rem] text-ltext font-medium whitespace-nowrap text-sm sm:text-base"
+              >
+                <motion.span 
+                  // className="hidden sm:block"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 260, 
+                    damping: 20,
+                    delay: 2 + index * 0.15 
+                  }}
+                >
+                  {item.icon}
+                </motion.span>
+                {item.text}
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
-      {/* Slider Indicator Dots */}
-      {/* <div className="absolute bottom-6 z-20 flex justify-center items-center gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
-              currentIndex === index ? "bg-primary w-3 md:w-4" : "bg-white/60"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          ></button>
-        ))}
-      </div> */}
-    </div>
+      
+    </motion.div>
   );
 };
 
