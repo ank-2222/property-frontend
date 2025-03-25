@@ -44,7 +44,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Properties", path: "/listings" },
+    { name: "Properties", path: "/properties" },
     { name: "Get in Touch", path: "/contact" },
   ];
 

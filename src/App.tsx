@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Project from "./pages/Project";
+import Properties from "./pages/Properties";
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -35,6 +36,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/project" element={<Project />} />
+        <Route path="/properties" element={<Properties />} />
       </Routes>
 
       {/* WhatsApp Floating Button */}
