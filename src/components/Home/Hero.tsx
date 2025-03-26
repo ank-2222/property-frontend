@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Home, Hotel, House, MapPin, Search } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
@@ -14,7 +14,8 @@ const images = [
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [, setIsLoaded] = useState(false);
-
+  const navigate = useNavigate();
+ const [location, setLocation] = useState('');
   useEffect(() => {
     // Set loaded state after a small delay to ensure smooth initial animation
     const loadTimer = setTimeout(() => {
@@ -31,6 +32,11 @@ const Hero = () => {
     };
   }, []);
 
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   const handleLocationSearch = (e:any) => {
+    e.preventDefault();
+    navigate(`/properties?location=${location}`);
+  }
   return (
     <motion.div 
       className="relative w-full h-screen overflow-hidden flex flex-col justify-center items-center"
@@ -117,6 +123,8 @@ const Hero = () => {
                 size={18}
               />
               <input
+              onChange={(e) => setLocation(e.target.value)}
+              value={location}
                 className="w-full font-regular h-10 text-dbackground font-semibold bg-transparent focus:border-0 focus:outline-0 text-sm sm:text-base"
                 placeholder="Location"
               />
@@ -127,6 +135,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              onClick={handleLocationSearch}
             >
               <Search size={16} className="mr-1" />
               Search

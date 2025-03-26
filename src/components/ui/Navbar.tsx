@@ -93,7 +93,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden lg:flex space-x-6">
           {menuItems.map((item) => (
             <li
               key={item.name}
@@ -154,7 +154,7 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop CTA Buttons */}
-        <div className="hidden md:flex justify-center items-end space-x-4">
+        <div className="hidden lg:flex justify-center items-end space-x-4">
       {/* Wobbling Button */}
       <motion.div
         initial={{ rotate: 0 }}
@@ -183,7 +183,7 @@ const Navbar = () => {
     </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-3 ">
+        <div className="lg:hidden flex items-center gap-3 ">
           {/* <a
             href="https://wa.me/00000"
             target="_blank"
@@ -200,14 +200,14 @@ const Navbar = () => {
       {/* Overlay - Moved overlay to render before the sidebar to fix z-index stacking */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-[50] md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-[50] lg:hidden"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
 
       {/* Mobile Menu Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[80%] md:hidden bg-dbackground shadow-xl z-[60] overflow-y-auto transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-screen w-[80%] lg:hidden bg-dbackground shadow-xl z-[60] overflow-y-auto transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

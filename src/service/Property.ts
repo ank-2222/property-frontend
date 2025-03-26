@@ -8,15 +8,14 @@ import {
 // Get all properties
 export async function getAllPropertiesService(filters: Record<string, any> = {}) {
     try {
-        // Convert filters object into URL query parameters
+        // Convert filters object into URL query parameters, excluding empty, null, or undefined values
         const queryParams = new URLSearchParams(
             Object.entries(filters)
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                .filter(([_, value]) => value !== undefined && value !== null)
+                .filter(([, value]) => value !== undefined && value !== null && value !== "")
                 .map(([key, value]) => [key, String(value)])
         ).toString();
 
-        const response = await fetch(`${getPropertiesApi}?${queryParams}`, {
+        const response = await fetch(`${getPropertiesApi}${queryParams ? `?${queryParams}` : ""}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -33,6 +32,7 @@ export async function getAllPropertiesService(filters: Record<string, any> = {})
         throw new Error(error.message || "Failed to fetch properties");
     }
 }
+
 
 
 // Get property by ID
