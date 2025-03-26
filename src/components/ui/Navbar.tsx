@@ -135,7 +135,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to="/blogs"
                   className="block px-4 py-2 text-sm hover:bg-primary hover:text-white transition"
                 >
                   Blog
@@ -273,11 +273,11 @@ const Navbar = () => {
                       Advertise Your Property
                     </button>
                     <Link
-                      to="/blog"
+                      to="/blogs"
                       className="block text-lg hover:text-primary transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
-                      Blog
+                      Blogs
                     </Link>
                     <Link
                       to="/faq"

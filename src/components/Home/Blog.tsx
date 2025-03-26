@@ -1,29 +1,18 @@
-
-const blogs = [
-    {
-      id: 1,
-      title: "Investing in Dubai: Why Now is the Best Time to Buy Property",
-      description: 
-        "Dubai’s real estate market is booming, with foreign investors flocking to purchase luxury apartments and waterfront villas. With tax-free income, high ROI, and world-class infrastructure, investing in Dubai has never been more attractive. Discover the key areas to consider and expert tips to maximize your returns.",
-      image: "/assets/herobg.jpg",
-    },
-    {
-      id: 2,
-      title: "Luxury Living: The Best Waterfront Properties in Dubai",
-      description: 
-        "From the iconic Palm Jumeirah to the futuristic Dubai Marina, waterfront living in Dubai offers a blend of exclusivity, luxury, and breathtaking views. Explore the top communities that offer premium beachside apartments, private villas, and stunning penthouses designed for high-end living.",
-      image: "/assets/herobg2.jpg",
-    },
-    {
-      id: 3,
-      title: "Dubai’s Smart Cities: The Future of Real Estate",
-      description: 
-        "Dubai is leading the way in smart city development, integrating AI, IoT, and sustainable architecture into its real estate sector. Find out how upcoming smart districts like Dubai Creek Harbour and Sustainable City are redefining modern living with energy-efficient homes, AI-powered security, and automated amenities.",
-      image: "/assets/herobg3.jpg",
-    },
-  ];
+import { useGetAllBlogs } from "@/feature/Blog/useGetAllBlogs";
+import { BlogResponse } from "@/interface/Blog";
+import { Skeleton } from "../ui/skeleton";
+import { Link, useNavigate } from "react-router-dom";
 
 const Blog = () => {
+  const { isLoading, data: blogs = [] } = useGetAllBlogs();
+  const navigate = useNavigate();
+
+  // Filter only published blogs
+  const publishedBlogs = blogs.filter((blog: BlogResponse) => blog.status === "published");
+
+  // Show only the first 6 published blogs
+  const displayedBlogs = publishedBlogs.slice(0, 6);
+
   return (
     <section className="py-10 px-6 max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-primaryDark">
@@ -33,27 +22,53 @@ const Blog = () => {
         Stay updated with the latest insights.
       </p>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {blogs.map((blog) => (
-          <div
-            key={blog.id}
-            className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
-          >
-            <img
-              src={blog.image}
-              alt={blog.title}
-              className="w-full h-48 object-cover rounded-t-xl group-hover:scale-110 transition-transform duration-300"
-            />
-            <div className="p-4">
-              <h3 className="text-lg font-bold text-gray-800">{blog.title}</h3>
-              <p className="text-sm text-gray-600 mt-2 line-clamp-2">{blog.description}</p>
-              <button className="mt-3 text-primary font-semibold">
-                Read More →
+      {isLoading ? (
+        <div className="flex justify-center items-center w-full gap-x-2">
+          <Skeleton className="w-full flex-1 h-80 my-5 bg-gray-400" />
+          <Skeleton className="w-full flex-1 h-80 my-5 bg-gray-400" />
+          <Skeleton className="w-full flex-1 h-80 my-5 bg-gray-400" />
+        </div>
+      ) : (
+        <>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {displayedBlogs.map((blog: BlogResponse) => (
+              <div
+                key={blog._id}
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
+              >
+                <img
+                  src={blog.coverImage}
+                  alt={blog.title}
+                  className="w-full h-[250px] object-cover rounded-t-xl group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-800 line-clamp-1">
+                    {blog.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+                    {blog.content}
+                  </p>
+                  <Link to={`/blogs/${blog._id}`} className="mt-5 text-primary font-semibold">
+                    Read More →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Show "View All Blogs" button if more than 6 published blogs exist */}
+          {publishedBlogs?.length > 6 && (
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => navigate("/blogs")}
+                className="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primaryDark transition-all duration-300"
+              >
+                View All Blogs
               </button>
             </div>
-          </div>
-        ))}
-      </div>
+          )}
+        </>
+      )}
     </section>
   );
 };

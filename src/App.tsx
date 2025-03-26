@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Project from "./pages/Project";
 import Properties from "./pages/Properties";
+import ViewBlog from "./components/Home/ViewBlog";
+import BlogList from "./components/Home/BlogList";
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -37,6 +39,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/project" element={<Project />} />
         <Route path="/properties" element={<Properties />} />
+        <Route path="/blogs" element={<BlogList />} />
+        <Route path="/blogs/:id" element={<ViewBlog />} />
       </Routes>
 
       {/* WhatsApp Floating Button */}
