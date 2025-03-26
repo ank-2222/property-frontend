@@ -76,7 +76,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         </div>
 
         {/* Location */}
-        <div className="flex flex-wrap justify-between items-center text-gray-600 text-xs sm:text-sm mb-2">
+        <div className="flex flex-wrap justify-between items-center text-gray-600 text-xs sm:text-sm my-2 md:my-0">
           <div className="flex items-center">
             <MapPin size={16} className="mr-2 text-[var(--color-primary)]" />
             <span>
@@ -90,7 +90,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
 
         {/* Features with Tooltips */}
         <TooltipProvider>
-          <div className="flex justify-start items-start flex-wrap gap-3 text-xs sm:text-sm text-gray-700">
+          <div className="flex justify-start items-start flex-wrap gap-x-3 gap-y-2 md:gap-y-0 md:gap-3  text-xs sm:text-sm text-gray-700">
             <Tooltip>
               <TooltipTrigger className="flex items-center">
                 <Bed size={18} className="mr-1 text-[var(--color-primary)]" />
@@ -131,7 +131,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         </TooltipProvider>
 
         {/* Amenities */}
-        <div className="flex flex-wrap gap-2 mb-2 text-xs">
+        <div className="flex flex-wrap gap-2 my-2 text-xs">
           {property.amenities.slice(0, 5).map((amenity, index) => (
             <span
               key={index}
@@ -153,7 +153,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         </p>
 
         {/* Property Type and Actions */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mt-4 sm:mt-0">
+        <div className="flex flex-col sm:flex-row justify-start md:justify-between md:items-center mt-4 sm:mt-0">
           {/* Property Type */}
           <div className="flex space-x-2 mb-2 sm:mb-0">
             <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-xs">

@@ -55,9 +55,9 @@ const Properties: React.FC = () => {
     <>
       <Navbar />
 
-      <div className="p-4 pt-30 max-w-[1200px] mx-auto space-y-6 flex justify-center items-start relative gap-x-4">
+      <div className="p-4 pt-40 max-w-[1200px] mx-auto space-y-6 flex justify-center items-start relative gap-x-4">
         {/* Desktop Filters Sidebar */}
-        <div className="hidden lg:block ">
+        <div className="hidden lg:block sticky top-0 ">
           <Filters
             filters={tempFilters}
             setFilters={setTempFilters}
