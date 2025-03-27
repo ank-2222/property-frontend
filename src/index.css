@@ -97,7 +97,8 @@ body::-webkit-scrollbar{
   /* light text */
   --color-ltext: #dddada;
   /* dark background */
-  --color-dbackground: #04111b;
+  --color-dbackground: #000;
+  /* --color-dbackground: #04111b; */
   /* light background */
   --color-background: #fcf8f8;
   /* primary color */

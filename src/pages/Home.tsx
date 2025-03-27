@@ -2,7 +2,7 @@ import AdvertiseProperty from "@/components/Home/AdvertiseProperty"
 import AboutUs from "../components/Home/AboutUs"
 // import Banner from "../components/Home/Banner"
 import ExploreProjects from "../components/Home/ExploreProjects"
-import ExploreProperties from "../components/Home/ExploreProperties"
+// import ExploreProperties from "../components/Home/ExploreProperties"
 import Hero from "../components/Home/Hero"
 // import Services from "../components/Home/Services"
 import Footer from "../components/ui/Footer"
@@ -23,7 +23,7 @@ function Home() {
 {/* <Services/> */}
 {/* <Banner/> */}
 <AdvertiseProperty/>
-<ExploreProperties/>
+{/* <ExploreProperties/> */}
 <Blog/>
     </div>
     <Footer/>

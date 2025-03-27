@@ -2,22 +2,30 @@ const AboutUs = () => {
   // Agent data array
   const agents = [
     {
-      name: "Sarah Al Mansoori",
-      expertise: "Luxury Villas & Waterfront",
-      areas: "Properties (Palm Jumeirah, Emirates Hills)",
-      image: "/assets/dp.jpg"
+      name: "Noor Al Omari ",
+      expertise: "Managing Director ",
+      areas: "Meydan, Downtown, Dubai Hills Estate",
+      image: "/assets/dp.jpg",
     },
     {
-      name: "Ahmed Hassan",
-      expertise: "Premium Apartments & Penthouses",
-      areas: "Properties (Downtown Dubai, Dubai Marina)",
-      image: "/assets/dp.jpg"
+      name: "Maha Al Omari ",
+      expertise: "Property Consultant",
+      areas: " Nad Al Sheba ",
+      image: "/assets/dp.jpg",
     },
-  
+    {
+      name: "Abdul Al-Neama ",
+      expertise: "Managing Director",
+      areas: " Nad Al Sheba ",
+      image: "/assets/dp.jpg",
+    },
   ];
 
   return (
-    <section id="ourstory" className="bg-dbackground text-ltext py-16 px-4 lg:px-20">
+    <section
+      id="ourstory"
+      className="bg-dbackground text-ltext py-16 px-4 lg:px-20"
+    >
       <div className="max-w-7xl mx-auto">
         {/* About Us Content */}
         <div className="flex flex-col lg:flex-row items-center gap-10 mb-16">
@@ -31,10 +39,17 @@ const AboutUs = () => {
               At <span className="text-primary">Monarch Hill</span> Real Estate,
             </h2>
             <p className="text-ltext mt-4">
-              we redefine excellence in the UAE's dynamic property market. With a passion for delivering premium real estate solutions, we specialize in property consultation, sales, rentals, and investment opportunities across both residential and commercial sectors.
+              Monarch Hill is a premier real estate agency in Dubai, dedicated
+              to offering exceptional services and exclusive luxury properties.
+              With a commitment to quality and customer satisfaction, we
+              specialize in high-end residential, commercial, and investment
+              opportunities across the city’s most sought-after locations.
             </p>
             <p className="text-ltext mt-2">
-              Our commitment to integrity, innovation, and client satisfaction sets us apart, ensuring seamless experiences whether you're buying, selling, or investing. At Monarch Hill, we don't just find you a property—we help you discover the perfect place to call home or grow your business.
+              Our experienced team ensures personalized attention and seamless
+              experiences for every client, helping them discover the perfect
+              property to suit their lifestyle and investment goals. At Monarch
+              Hill, we redefine luxury and excellence in real estate.
             </p>
             <a
               href="#"
@@ -60,33 +75,34 @@ const AboutUs = () => {
             Meet Our Agents
           </h2>
           <div className="w-[100px] h-1 bg-primary mx-auto mb-10 rounded-full" />
-          
+
           {/* Agent Cards Grid - Responsive Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+          <div className="flex justify-center items-start flex-wrap w-full mt-10">
             {agents.map((agent, index) => (
-              <div key={index} className="flex flex-col items-center group border-0 border-accent p-2 rounded-lg">
+              <div
+                key={index}
+                className="flex flex-col items-center group border-0 border-accent p-2 rounded-lg"
+              >
                 {/* Circular Profile Image */}
                 <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary shadow-lg hover:shadow-accent/30 transition-all duration-300">
-                  <img 
-                    src={agent.image} 
-                    alt={agent.name} 
+                  <img
+                    src={agent.image}
+                    alt={agent.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Agent Details Card */}
-                <div className="bg-text/60 max-w-[300px] h-[150px] mt-4 rounded-lg p-4 text-center shadow-md hover:shadow-accent/10 transition-all duration-300">
-                  <h3 className="text-xl font-bold text-ltext">
-                    {agent.name}
-                  </h3>
+                <div className="bg-text/60 w-[300px] h-[150px] mt-4 rounded-lg p-4 text-center shadow-md hover:shadow-accent/10 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-ltext">{agent.name}</h3>
                   <p className="text-primary font-medium mt-1 line-clamp-2">
                     {agent.expertise}
                   </p>
                   <p className="text-ltext text-sm mt-1 line-clamp-2">
-                    {agent.areas} 
+                    <span className="font-semibold">Area:</span> {agent.areas}
                   </p>
                 </div>
-                
+
                 {/* Dotted Line Below Card */}
                 <div className="w-full h-4 flex justify-center items-center mt-4">
                   <div className="w-3/4 border-b border-dashed border-ltext/30"></div>

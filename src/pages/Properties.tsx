@@ -87,7 +87,7 @@ const Properties: React.FC = () => {
             <div>
               <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
                 <DrawerTrigger asChild>
-                  <Button className="fixed bottom-6 left-6 w-[100px] text-white text-md shadow-lg z-50">
+                  <Button className="fixed bottom-6 left-6 w-[100px] text-white text-md shadow-lg z-50 lg:hidden">
                     Filter <Filter size={20} className="ml-1" />
                   </Button>
                 </DrawerTrigger>
@@ -133,6 +133,7 @@ const Properties: React.FC = () => {
               </div>
 
               {/* Pagination Controls */}
+              <div className="flex justify-center items-center space-y-6 flex-col">
               {properties?.properties.length !== 0 && (
                 <div className="flex justify-center mt-20">
                   <Pagination>
@@ -151,7 +152,7 @@ const Properties: React.FC = () => {
                       </PaginationItem>
 
                       <PaginationItem>
-                        <span className="px-4 py-2 border rounded-md">
+                        <span className="px-4 py-2 border border-primary rounded-md">
                           {filters.page}
                         </span>
                       </PaginationItem>
@@ -172,6 +173,9 @@ const Properties: React.FC = () => {
                   </Pagination>
                 </div>
               )}
+                <p className="text-xs">Pages</p>
+                </div>
+            
             </section>
           )}
         </section>

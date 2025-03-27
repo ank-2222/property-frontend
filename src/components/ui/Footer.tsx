@@ -2,13 +2,14 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white ">
+    <footer className="bg-dbackground text-white ">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {/* Brand Section */}
           <div>
-            <h2 className="text-2xl font-bold text-primary">Monarch Hill Real Estate</h2>
+            {/* <h2 className="text-2xl font-bold text-primary">Monarch Hill Real Estate</h2> */}
+            <img src={"/assets/logo.jpeg"} alt={"logo"} className="w-[200px]" />
             <p className="text-gray-400 mt-2 text-sm">
               Discover premium real estate options with us. Your dream home is just a click away.
             </p>
@@ -45,7 +46,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded-l-md bg-gray-800 text-white border border-gray-600 focus:border-primary outline-none"
+                className="w-full px-4 py-2 rounded-l-md bg-dbackground text-white border border-gray-600 focus:border-primary outline-none"
               />
               <button className="bg-primary px-4 py-2 rounded-r-md hover:bg-white hover:text-primary transition">
                 Subscribe

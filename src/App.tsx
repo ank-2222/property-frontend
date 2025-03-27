@@ -8,8 +8,8 @@ import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Project from "./pages/Project";
 import Properties from "./pages/Properties";
-import ViewBlog from "./components/Home/ViewBlog";
-import BlogList from "./components/Home/BlogList";
+import ViewBlog from "./pages/ViewBlog";
+import BlogList from "./pages/BlogList";
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);

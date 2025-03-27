@@ -85,12 +85,16 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-2 md:px-6 py-6 md:py-4">
         {/* Logo */}
-        <Link
+        {/* <Link
           to="/"
           className="text-xl md:text-2xl font-semibold tracking-wide text-primary"
         >
           Monarch Hill Real Estate
-        </Link>
+        </Link> */}
+        <img
+        src={"/assets/logo.jpeg"}
+        className="w-[200px]  "
+        />
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-6">
