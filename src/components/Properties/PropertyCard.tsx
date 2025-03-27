@@ -99,7 +99,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
             {property?.images?.map((slideImage, index) => (
               <div key={index}>
                 <div
-                  className="bg-center bg-cover w-full sm:w-1/3 h-[200px] sm:h-[350px] "
+                  className="bg-center bg-cover w-full  h-[200px] sm:h-[350px] "
                   style={{ ...divStyle, backgroundImage: `url(${slideImage})` }}
                 ></div>
               </div>

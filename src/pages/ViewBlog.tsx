@@ -14,7 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-
+import { Helmet } from "react-helmet-async";
 const ViewBlog = () => {
   const { id } = useParams();
   const { isPending, data } = useGetBlogById(id as string);
@@ -31,7 +31,18 @@ const ViewBlog = () => {
   return (
     <>
       <Navbar />
+      <Helmet key={blog?.title}>
+        <meta charSet="utf-8" />
+        <title>{blog?.title }</title>
+        <meta name="description" content={blog?.seo?.metaDescription} />
+        {blog?.seo?.tags?.map((tag: string, index: number) => (
+          <meta name="keywords" content={tag} key={index} />
+        ))}
 
+        <meta property="og:title" content={blog?.title} />
+        <meta property="og:description" content={blog?.seo?.metaDescription} />
+        <meta property="og:image" content={blog?.coverImage} />
+      </Helmet>
       <section className="max-w-4xl mx-auto p-6 pt-20">
         {/* Loader */}
         {isPending && (
