@@ -13,9 +13,9 @@ const EvaluateForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md md:max-w-lg lg:max-w-xl max-h-[90vh] overflow-y-scroll">
+      <DialogContent className="p-4 sm:max-w-md md:max-w-lg lg:max-w-xl max-h-[90vh] overflow-y-scroll">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-center">Evaluate Your Property</DialogTitle>
+          <DialogTitle className="text-xl font-bold text-center">Evaluate My Property</DialogTitle>
         </DialogHeader>
         <form className="space-y-6">
           {/* Property Details */}

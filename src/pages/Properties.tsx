@@ -134,48 +134,49 @@ const Properties: React.FC = () => {
 
               {/* Pagination Controls */}
               <div className="flex justify-center items-center space-y-6 flex-col">
-              {properties?.properties.length !== 0 && (
-                <div className="flex justify-center mt-20">
-                  <Pagination>
-                    <PaginationContent>
-                      <PaginationItem>
-                        {filters.page !== 1 && (
-                          <PaginationPrevious
-                            onClick={() =>
-                              setFilters((prev) => ({
-                                ...prev,
-                                page: Math.max(prev.page - 1, 1),
-                              }))
-                            }
-                          />
-                        )}
-                      </PaginationItem>
+                {properties?.properties.length !== 0 && (
+                  <div className="flex justify-center mt-20">
+                    <Pagination>
+                      <PaginationContent>
+                        <PaginationItem>
+                          {filters.page !== 1 && (
+                            <PaginationPrevious
+                              onClick={() =>
+                                setFilters((prev) => ({
+                                  ...prev,
+                                  page: Math.max(prev.page - 1, 1),
+                                }))
+                              }
+                            />
+                          )}
+                        </PaginationItem>
 
-                      <PaginationItem>
-                        <span className="px-4 py-2 border border-primary rounded-md">
-                          {filters.page}
-                        </span>
-                      </PaginationItem>
+                        <PaginationItem>
+                          <span className="px-4 py-2 border border-primary rounded-md">
+                            {filters.page}
+                          </span>
+                        </PaginationItem>
 
-                      <PaginationItem>
-                        {properties?.properties.length === filters.limit && (
-                          <PaginationNext
-                            onClick={() =>
-                              setFilters((prev) => ({
-                                ...prev,
-                                page: prev.page + 1,
-                              }))
-                            }
-                          />
-                        )}
-                      </PaginationItem>
-                    </PaginationContent>
-                  </Pagination>
-                </div>
-              )}
-                <p className="text-xs">Pages</p>
-                </div>
-            
+                        <PaginationItem>
+                          {properties?.properties.length === filters.limit && (
+                            <PaginationNext
+                              onClick={() =>
+                                setFilters((prev) => ({
+                                  ...prev,
+                                  page: prev.page + 1,
+                                }))
+                              }
+                            />
+                          )}
+                        </PaginationItem>
+                      </PaginationContent>
+                    </Pagination>
+                  </div>
+                )}
+                {properties?.properties.length !== 0 && (
+                  <p className="text-xs">Pages</p>
+                )}
+              </div>
             </section>
           )}
         </section>

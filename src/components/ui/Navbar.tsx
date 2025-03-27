@@ -134,7 +134,7 @@ const Navbar = () => {
                   onClick={() => handleScrollToSection("advertise")}
                   className="block w-full px-4 py-2 text-sm text-left hover:bg-primary hover:text-white transition"
                 >
-                  Advertise Your Property
+                  Advertise My Property
                 </button>
               </li>
               <li>
@@ -169,7 +169,7 @@ const Navbar = () => {
         onClick={() => setIsPopUpOpen(true)}
     className="font-regular bg-transparent border-2  border-primary hover:bg-primary hover:text-white text-md font-semibold rounded-full px-5 py-2 transition-colors duration-200" 
       >
-        Evaluate my Property
+        Evaluate My Property
       </button>
       <EvaluateForm isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)} />
       </motion.div>
@@ -274,7 +274,7 @@ const Navbar = () => {
                       onClick={() => handleScrollToSection("advertise")}
                       className="block w-full text-left text-lg hover:text-primary transition-colors"
                     >
-                      Advertise Your Property
+                      Advertise My Property
                     </button>
                     <Link
                       to="/blogs"
@@ -301,7 +301,7 @@ const Navbar = () => {
                 className="w-full text-center font-regular text-base py-3"
                 onClick={() => setIsOpen(false)}
               >
-                Evaluate my Property
+                Evaluate My Property
               </Button>
             </div>
           </div>

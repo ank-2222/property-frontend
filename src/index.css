@@ -86,25 +86,13 @@ body::-webkit-scrollbar{
 }
 
 @theme{
-  /* --color-text: #363333;
-  --color-ltext: #dddada;
-  --color-dbackground: #04111b;
-  --color-background: #fcf8f8;
-  --color-primary: #f7363d;
-  --color-secondary: #fb9da0;
-  --color-accent: #f8494f; */
-  --color-text: #1A1A1A;
-  /* light text */
-  --color-ltext: #dddada;
-  /* dark background */
-  --color-dbackground: #000;
-  /* --color-dbackground: #04111b; */
-  /* light background */
-  --color-background: #fcf8f8;
-  /* primary color */
-  --color-primary: #FF3B3B;
-  --color-secondary: #fb9da0;
-  --color-accent: #f8494f;
+  --color-text: #1A1A1A; /* Dark Gray for readability */
+  --color-ltext: #D1D1D1; /* Soft Gray for contrast */
+  --color-dbackground: #0B1C2C; /* Deep Navy for depth */
+  --color-background: #EDEDED; /* Light Gray as base */
+  --color-primary: #008CBA; /* Cool Blue for primary */
+  --color-secondary: #5FB3B3; /* Soft Teal */
+  --color-accent: #00A896; /* Vibrant Cyan */
 }
 
 @layer base {

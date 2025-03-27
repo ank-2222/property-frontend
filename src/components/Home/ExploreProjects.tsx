@@ -33,7 +33,7 @@ function ExploreProject() {
       <section className="relative z-10 text-center mx-2">
         <div className="mx-auto p-4">
           <h2 className="text-3xl lg:text-4xl text-white font-bold">
-            Discover <span className="text-[#f30606]">New Projects</span>
+            Discover <span className="text-primary">New Projects</span>
           </h2>
           <p className="text-white text-md lg:text-lg mt-2 max-w-[900px]  lg:mx-auto">
           Explore the latest off-plan developments in the market, complete with details on their features and expected completion dates.
@@ -41,11 +41,11 @@ function ExploreProject() {
         </div>
 
         {/* Decorative Divider */}
-        <div className="w-16 h-1 bg-[#ff5959] mx-auto my-4 rounded-full" />
+        <div className="w-16 h-1 bg-primary mx-auto my-4 rounded-full" />
 
         {/* Carousel Section */}
         <div className="container mx-auto mt-10">
-          <div className="w-[600px] h-[400px] lg:h-[600px] 3xl:h-[1000px] 3xl:w-[1000px] mx-auto overflow-x-hidden">
+          <div className="my-10">
             <Carousel slides={slides} />
           </div>
         </div>

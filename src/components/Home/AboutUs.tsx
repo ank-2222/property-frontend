@@ -104,9 +104,9 @@ const AboutUs = () => {
                 </div>
 
                 {/* Dotted Line Below Card */}
-                <div className="w-full h-4 flex justify-center items-center mt-4">
+                {/* <div className="w-full h-4 flex justify-center items-center mt-4">
                   <div className="w-3/4 border-b border-dashed border-ltext/30"></div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

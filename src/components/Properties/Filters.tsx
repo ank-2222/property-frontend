@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Slider } from "@/components/ui/slider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -57,7 +56,7 @@ const handleApplyButton = (filters:any) => {
               setFilters({ ...filters, location: e.target.value })
             }
           />
-          <Input
+          {/* <Input
             name="city"
             placeholder="Enter City"
             value={filters.city}
@@ -68,80 +67,46 @@ const handleApplyButton = (filters:any) => {
             placeholder="Enter Area"
             value={filters.area}
             onChange={(e) => setFilters({ ...filters, area: e.target.value })}
-          />
+          /> */}
         </div>
 
-        {/* Price Range */}
-        <div>
-          <label className="block text-sm font-medium mb-2">Price Range ($)</label>
-          <Slider
-            min={1000}
-            max={100000}
-            step={1000}
-            defaultValue={[filters.minPrice || 1000, filters.maxPrice || 100000]}
-            onValueChange={([min, max]) =>
-              setFilters({ ...filters, minPrice: min, maxPrice: max })
-            }
-              className="bg-gray-300"
-          />
-          <div className="flex justify-between text-xs text-gray-600 mt-2">
-            <span>${filters.minPrice || 1000}</span>
-            <span>${filters.maxPrice || 100000}</span>
-          </div>
-        </div>
+     {/* Price Range */}
+<div>
+  <label className="block text-sm font-medium mb-2">Price Range ($)</label>
+  <div className="flex space-x-2">
+    <Input
+      type="number"
+      placeholder="Min Price"
+      value={filters.minPrice || ""}
+      onChange={(e) => setFilters({ ...filters, minPrice: e.target.value ? Number(e.target.value) : undefined })}
+    />
+    <Input
+      type="number"
+      placeholder="Max Price"
+      value={filters.maxPrice || ""}
+      onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value ? Number(e.target.value) : undefined })}
+    />
+  </div>
+</div>
 
-        {/* Size Range */}
-        <div>
-          <label className="block text-sm font-medium mb-2">Property Size (sqft)</label>
-          <Slider
-            min={500}
-            max={5000}
-            step={100}
-            defaultValue={[filters.minSize || 500, filters.maxSize || 5000]}
-            onValueChange={([min, max]) =>
-              setFilters({ ...filters, minSize: min, maxSize: max })
-            }
-            className="bg-gray-300"
-          />
-          <div className="flex justify-between text-xs text-gray-600 mt-2">
-            <span>{filters.minSize || 500} sqft</span>
-            <span>{filters.maxSize || 5000} sqft</span>
-          </div>
-        </div>
-
-        {/* Bedrooms & Bathrooms */}
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-2">Bedrooms</label>
-            <Slider
-              min={1}
-              max={10}
-              step={1}
-              defaultValue={[filters.bedrooms || 1]}
-              onValueChange={([value]) =>
-                setFilters({ ...filters, bedrooms: value })
-              }
-                className="bg-gray-300"
-            />
-            <span className="text-xs text-gray-600">{filters.bedrooms || 1}</span>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">Bathrooms</label>
-            <Slider
-              min={1}
-              max={10}
-              step={1}
-              defaultValue={[filters.bathrooms || 1]}
-              onValueChange={([value]) =>
-                setFilters({ ...filters, bathrooms: value })
-              }
-                className="bg-gray-300"
-            />
-            <span className="text-xs text-gray-600">{filters.bathrooms || 1}</span>
-          </div>
-        </div>
-
+{/* Property Size */}
+<div>
+  <label className="block text-sm font-medium mb-2">Property Size (sqft)</label>
+  <div className="flex space-x-2">
+    <Input
+      type="number"
+      placeholder="Min Size"
+      value={filters.minSize || ""}
+      onChange={(e) => setFilters({ ...filters, minSize: e.target.value ? Number(e.target.value) : undefined })}
+    />
+    <Input
+      type="number"
+      placeholder="Max Size"
+      value={filters.maxSize || ""}
+      onChange={(e) => setFilters({ ...filters, maxSize: e.target.value ? Number(e.target.value) : undefined })}
+    />
+  </div>
+</div>
         {/* Property Type */}
         <div >
           <label className="block text-sm font-medium">Property Type</label>

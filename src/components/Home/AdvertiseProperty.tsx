@@ -23,9 +23,9 @@ const AdvertiseProperty = () => {
   return (
     <div id="advertise" className="container mx-auto p-6 max-w-3xl bg-white shadow-lg rounded-lg mt-10">
       <h2 className="text-3xl font-bold text-gray-800 text-center">
-        Advertise Your <span className="text-[#ff3b3b]">Property</span>
+        Advertise My <span className="text-primary">Property</span>
       </h2>
-      <div className="w-16 h-1 bg-[#ff5959] mx-auto my-4 rounded-full" />
+      <div className="w-16 h-1 bg-primary/70 mx-auto my-4 rounded-full" />
       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
         {/* Property Title */}
         <div>
@@ -36,7 +36,7 @@ const AdvertiseProperty = () => {
             value={property.title}
             onChange={handleInputChange}
             placeholder="Enter property title"
-            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b]"
+            className="w-full p-2 border rounded-md focus:ring-2 "
             required
           />
         </div>
@@ -50,7 +50,7 @@ const AdvertiseProperty = () => {
             value={property.location}
             onChange={handleInputChange}
             placeholder="Enter location"
-            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b]"
+            className="w-full p-2 border rounded-md focus:ring-2 "
             required
           />
         </div>
@@ -64,7 +64,7 @@ const AdvertiseProperty = () => {
             value={property.price}
             onChange={handleInputChange}
             placeholder="Enter price"
-            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b]"
+            className="w-full p-2 border rounded-md focus:ring-2 "
             required
           />
         </div>
@@ -76,7 +76,7 @@ const AdvertiseProperty = () => {
             value={property.description}
             onChange={handleInputChange}
             placeholder="Name"
-            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b] "
+            className="w-full p-2 border rounded-md focus:ring-2  "
             required
           />
         </div>
@@ -87,14 +87,14 @@ const AdvertiseProperty = () => {
             value={property.description}
             onChange={handleInputChange}
             placeholder="contact number"
-            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-[#ff3b3b] "
+            className="w-full p-2 border rounded-md focus:ring-2  "
             required
           />
         </div>
 
        
         {/* Submit Button */}
-        <button type="submit" className="w-full bg-[#ff3b3b] text-white py-2 rounded-md hover:bg-red-600">
+        <button type="submit" className="w-full bg-primary text-white py-2 rounded-md hover:bg-primary/70">
           Submit 
         </button>
       </form>

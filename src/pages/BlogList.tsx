@@ -36,11 +36,11 @@ const BlogList = () => {
           </div>
         ) : (
           <>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 flex flex-wrap gap-6 justify-center items-center">
               {displayedBlogs.map((blog: BlogResponse) => (
                 <div
                   key={blog._id}
-                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
+                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white w-[350px]"
                 >
                   <img
                     src={blog.coverImage}

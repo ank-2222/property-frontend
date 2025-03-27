@@ -10,6 +10,10 @@ import Project from "./pages/Project";
 import Properties from "./pages/Properties";
 import ViewBlog from "./pages/ViewBlog";
 import BlogList from "./pages/BlogList";
+import Sales from "./pages/Sales";
+import Rental from "./pages/Rental";
+import Commercial from "./pages/Commercial";
+import PrivacyPolicy from "./pages/Privacypolicy";
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -41,6 +45,10 @@ function App() {
         <Route path="/properties" element={<Properties />} />
         <Route path="/blogs" element={<BlogList />} />
         <Route path="/blogs/:id" element={<ViewBlog />} />
+        <Route path="/sales" element={<Sales />} />
+        <Route path="/rental" element={<Rental />} />
+        <Route path="/commercial" element={<Commercial />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
 
       {/* WhatsApp Floating Button */}

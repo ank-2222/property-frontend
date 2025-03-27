@@ -151,9 +151,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 1.6 }}
         >
           {[
-            { to: "/", icon: <Hotel size={18} />, text: "Sales" },
-            { to: "/", icon: <Home size={18} />, text: "Rental" },
-            { to: "/", icon: <House size={18} />, text: "Commercial" }
+            { to: "/sales", icon: <Hotel size={18} />, text: "Sales" },
+            { to: "/rental", icon: <Home size={18} />, text: "Rental" },
+            { to: "/commercial", icon: <House size={18} />, text: "Commercial" }
           ].map((item, index) => (
             <motion.div
               key={index}
