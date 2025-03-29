@@ -9,13 +9,11 @@ import Footer from "../components/ui/Footer";
 import Navbar from "../components/ui/Navbar";
 import ExploreProjects2 from "@/components/Home/ExploreProjects2";
 import Blog from "@/components/Home/Blog";
-import Logo from "@/components/ui/logo";
 
 function Home() {
   return (
     <>
       <Navbar />
-      <Logo />
       <div className=" mx-auto mt-40px  ">
         <Hero />
         <ExploreProjects2 />

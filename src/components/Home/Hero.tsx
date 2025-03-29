@@ -5,10 +5,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "/assets/hero1.webp",
-  "/assets/hero2.webp",
-  "/assets/hero3.webp",
-  "/assets/hero4.webp",
+  // "/assets/hero1.webp",
+  // "/assets/hero2.webp",
+  // "/assets/hero3.webp",
+  // "/assets/hero4.webp",
+  "/assets/img2.PNG",
+  "/assets/img3.PNG",
+  "/assets/img4.PNG",
+  "/assets/img5.PNG",
 ];
 
 const Hero = () => {
@@ -57,7 +61,7 @@ const Hero = () => {
           <img
             src={images[currentIndex]}
             alt="Hero Background"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-fill aspect-video  "
           />
         </motion.div>
       </AnimatePresence>

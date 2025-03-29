@@ -3,6 +3,7 @@ import { AgentResponse } from "@/interface/Agent";
 import { Skeleton } from "../ui/skeleton";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const { data: agents, isPending } = useGetAllAgent();
@@ -38,12 +39,12 @@ const AboutUs = () => {
               property to suit their lifestyle and investment goals. At Monarch
               Hill, we redefine luxury and excellence in real estate.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/properties"
               className="inline-flex items-center gap-2 text-primary font-medium mt-6 hover:underline"
             >
-              Our Services →
-            </a>
+             properties →
+            </Link>
           </div>
 
           {/* Right Image */}

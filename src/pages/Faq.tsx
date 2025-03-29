@@ -4,7 +4,6 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { Search } from "lucide-react";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import { Link } from "react-router-dom";
 
 function Faq() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -79,25 +78,8 @@ function Faq() {
         )}
       </div>
       
-      {/* Not finding what you need section */}
-      <div className="bg-[var(--color-primary)]/10 p-6 md:p-8 rounded-xl text-center">
-        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-[var(--color-primary)]">
-          Not finding what you need?
-        </h3>
-        <p className="text-[var(--color-text)] mb-6 max-w-2xl mx-auto">
-          Our support team is here to help. Reach out to us directly or browse our available properties.
-        </p>
-        
-        {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <Link  to="/contact" className="bg-[var(--color-accent)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--color-accent)]/90 transition-colors">
-            Contact Support
-          </Link>
-          <Link to="/properties" className="border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-lg shadow-md hover:bg-[var(--color-primary)]/10 transition-colors">
-            Browse Properties
-          </Link>
-        </div>
-      </div>
+     
+    
     </div>
     <Footer/>
     </>

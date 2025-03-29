@@ -263,7 +263,7 @@ const ExploreProjects = () => {
                   <Button
                     className="bg-primary text-white flex justify-center items-center gap-x-2 w-full mt-4"
                     onClick={() => {
-                      const phoneNumber = "919876543210"; // Replace with the desired phone number
+                      const phoneNumber = "971501166808"; // Replace with the desired phone number
                       const message = encodeURIComponent(
                         `Hello, I'm interested in ${property.title}. Please provide more details.`
                       );

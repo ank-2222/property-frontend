@@ -3,16 +3,17 @@ import { Carousel } from "../ui/carousel";
 const slides = [
   {
     title: "Expo Golf Villas 5",
-    button: "View Details",
-    link:"https://properties.emaar.com/en/properties/expo-golf-villas-phase-v",
+    button: "Whatsapp Us",
+    link:"https://wa.me/+971501166808",
+    // link:"https://properties.emaar.com/en/properties/expo-golf-villas-phase-v",
     src: "/assets/expogolf.webp",
   },
-  {
-    title: "Azizi Venice",
-    button: "Explore Now",
-    link:"https://www.azizivenice.com/en",
-    src: "/assets/azizi.webp",
-  }
+  // {
+  //   title: "Azizi Venice",
+  //   button: "Explore Now",
+  //   link:"https://www.azizivenice.com/en",
+  //   src: "/assets/azizi.webp",
+  // }
 ];
 
 function ExploreProject() {

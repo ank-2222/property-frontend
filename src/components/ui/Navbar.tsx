@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./button";
 // import { RiWhatsappFill } from "react-icons/ri";
@@ -13,22 +13,47 @@ const Navbar = () => {
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
-
+  const [isTransparent, setIsTransparent] = useState(true);
+  
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   let lastScrollY = 0;
 
   useEffect(() => {
     const handleScroll = () => {
+      // Hide/show navbar based on scroll direction
       if (window.scrollY > lastScrollY) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
+      
+      // Control transparency - only on homepage
+      if (isHomePage) {
+        // Make navbar transparent when at top of page (hero section)
+        if (window.scrollY < 100) {
+          setIsTransparent(true);
+        } else {
+          setIsTransparent(false);
+        }
+      } else {
+        // Always solid on other pages
+        setIsTransparent(false);
+      }
+      
       lastScrollY = window.scrollY;
     };
 
+    // Set initial transparency state
+    if (isHomePage && window.scrollY < 100) {
+      setIsTransparent(true);
+    } else {
+      setIsTransparent(false);
+    }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -78,24 +103,19 @@ const Navbar = () => {
       scrollToSection(id);
     }
   };
+  
   return (
     <nav
-      className={`bg-dbackground z-[40] text-ltext fixed w-full top-0 transition-transform duration-300 ${
+      className={`fixed w-full top-0 z-[40] transition-all duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
+      } ${
+        isTransparent 
+          ? "bg-transparent text-white" 
+          : "bg-dbackground text-ltext shadow-md"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center px-2 md:px-6 py-6 md:py-4">
         {/* Logo */}
-        {/* <Link
-          to="/"
-          className="text-xl md:text-2xl font-semibold tracking-wide text-primary"
-        >
-          Monarch Hill Real Estate
-        </Link> */}
-        {/* <img
-        src={"/assets/logo.jpeg"}
-        className="w-[200px]  "
-        /> */}
         <Logo size="xs" />
 
         {/* Desktop Menu */}
@@ -125,7 +145,7 @@ const Navbar = () => {
             </div>
             {/* Dropdown Content */}
             <ul
-              className={`absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-dbackground shadow-lg rounded-md py-2 transition-all duration-100 ${
+              className={`absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-dbackground text-ltext shadow-lg rounded-md py-2 transition-all duration-100 ${
                 dropdown
                   ? "top-full opacity-100 visible"
                   : "top-0 opacity-0 invisible"
@@ -161,43 +181,27 @@ const Navbar = () => {
 
         {/* Desktop CTA Buttons */}
         <div className="hidden lg:flex justify-center items-end space-x-4">
-      {/* Wobbling Button */}
-      <motion.div
-        initial={{ rotate: 0 }}
-        animate={{ rotate: [0, -3, 3, -1, 1, 0] }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      >
-       <button
-        onClick={() => setIsPopUpOpen(true)}
-    className="font-regular bg-transparent border-2  border-primary hover:bg-primary hover:text-white text-md font-semibold rounded-full px-5 py-2 transition-colors duration-200" 
-      >
-        Evaluate My Property
-      </button>
-      <EvaluateForm isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)} />
-      </motion.div>
-
-      {/* WhatsApp Button */}
-      {/* <a href="https://wa.me/00000" target="_blank" rel="noopener noreferrer">
-        <motion.div
-          initial={{ rotate: 0 }}
-          animate={{ rotate: [0, -5, 5, -3, 3, 0] }}
-          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
-        >
-          <RiWhatsappFill className="text-green-600 text-4xl border-2 rounded-[0.4rem] p-1" />
-        </motion.div>
-      </a> */}
-    </div>
+          {/* Wobbling Button */}
+          <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: [0, -3, 3, -1, 1, 0] }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <button
+              onClick={() => setIsPopUpOpen(true)}
+              className={`font-regular border-2 border-primary hover:bg-primary hover:text-white text-md font-semibold rounded-full px-5 py-2 transition-colors duration-200 ${
+                isTransparent ? "bg-transparent text-white" : "bg-transparent"
+              }`}
+            >
+              Evaluate My Property
+            </button>
+            <EvaluateForm isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)} />
+          </motion.div>
+        </div>
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-3 ">
-          {/* <a
-            href="https://wa.me/00000"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <RiWhatsappFill className="text-green-600 text-3xl" />
-          </a> */}
-          <button className="text-primary" onClick={() => setIsOpen(!isOpen)}>
+          <button className={isTransparent ? "text-white" : "text-primary"} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -301,10 +305,14 @@ const Navbar = () => {
             <div className="pt-4">
               <Button
                 className="w-full text-center font-regular text-base py-3"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsPopUpOpen(true);
+                  setIsOpen(false);
+                }}
               >
                 Evaluate My Property
               </Button>
+              <EvaluateForm isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)} />
             </div>
           </div>
         </div>

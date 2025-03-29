@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
             Information We Collect
           </h2>
           <p className="text-[var(--color-text)]">
-            We collect personal information such as name, email, and contact details when you interact with our services.
+            We collect personal information such as name, email, phone number, and contact details when you interact with our services. Additionally, we may collect non-personal data such as your IP address, browser type, and device information to enhance your experience.
           </p>
         </section>
 
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
             How We Use Your Information
           </h2>
           <p className="text-[var(--color-text)]">
-            Your information helps us personalize user experience, improve our services, and communicate updates.
+            Your information helps us personalize your experience on our platform by providing relevant property listings, recommendations, and targeted marketing. We also use your data to improve our services, respond to inquiries, and send updates about new listings, offers, or changes to our policies.
           </p>
         </section>
 
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
             Data Protection
           </h2>
           <p className="text-[var(--color-text)]">
-            We take security measures to protect your data from unauthorized access, alteration, or disclosure.
+            We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, or disclosure. This includes encryption, secure data storage, and restricted access to sensitive data. However, while we take strong precautions, no method of transmission over the internet is 100% secure.
           </p>
         </section>
 
@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
             Cookies & Tracking
           </h2>
           <p className="text-[var(--color-text)]">
-            We use cookies to enhance user experience. You can disable cookies in your browser settings.
+            We use cookies and tracking technologies to analyze website traffic, enhance your browsing experience, and provide personalized content. You can manage cookie preferences in your browser settings, but disabling them may affect the functionality of certain features on our website.
           </p>
         </section>
 
@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
             Third-Party Services
           </h2>
           <p className="text-[var(--color-text)]">
-            We may share limited data with third-party partners to improve our services while ensuring strict confidentiality.
+            We may share limited data with third-party partners, including analytics providers and advertising networks, to improve our services. These partners are bound by confidentiality agreements and are prohibited from using your data for unauthorized purposes.
           </p>
         </section>
 
@@ -64,12 +64,12 @@ const PrivacyPolicy = () => {
             Changes to Policy
           </h2>
           <p className="text-[var(--color-text)]">
-            We reserve the right to update this policy at any time. Users will be notified of significant changes.
+            We reserve the right to update this privacy policy at any time to reflect changes in legal requirements or our business practices. We will notify users of significant changes via email or website announcements. Continued use of our services after modifications constitutes acceptance of the revised policy.
           </p>
         </section>
 
         <p className="text-sm text-[var(--color-accent)]">
-          If you have any questions, feel free to contact us.
+          If you have any questions or concerns about our privacy practices, feel free to contact us.
         </p>
       </div>
     </div>
@@ -77,5 +77,7 @@ const PrivacyPolicy = () => {
     </>
   );
 };
+
+
 
 export default PrivacyPolicy;

@@ -344,7 +344,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
                   <Button
                     className="bg-primary text-white flex justify-center items-center gap-x-2 w-full mt-4"
                     onClick={() => {
-                      const phoneNumber = "919876543210"; // Replace with the desired phone number
+                      const phoneNumber = "+971501166808"; // Replace with the desired phone number
                       const message = encodeURIComponent(
                         `Hello, I'm interested in ${property.title}. Please provide more details.`
                       );
@@ -365,7 +365,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
             <button
               className="bg-[var(--color-primary)] text-white px-3 py-2 text-xs sm:text-sm rounded-lg hover:bg-[var(--color-accent)] transition w-full sm:w-auto flex justify-center items-center gap-x-2"
               onClick={() => {
-                const phoneNumber = "919876543210"; // Replace with the desired phone number
+                const phoneNumber = "+971501166808"; // Replace with the desired phone number
                 const message = encodeURIComponent(
                   `Hello, I'm interested in ${property.title}. Please provide more details.`
                 );
