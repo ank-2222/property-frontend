@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,9 @@ const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <>
     <Navbar/>
@@ -32,7 +34,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative w-full py-16 px-6 lg:px-20 bg-white">
+      <section className="relative max-w-[1200px] mx-auto py-16 px-6 lg:px-20 bg-white">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Contact Details */}
           <motion.div

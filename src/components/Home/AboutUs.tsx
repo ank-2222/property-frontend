@@ -1,25 +1,12 @@
+import { useGetAllAgent } from "@/feature/Agent/useGetAllAgent";
+import { AgentResponse } from "@/interface/Agent";
+import { Skeleton } from "../ui/skeleton";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 const AboutUs = () => {
-  // Agent data array
-  const agents = [
-    {
-      name: "Noor Al Omari ",
-      expertise: "Managing Director ",
-      areas: "Meydan, Downtown, Dubai Hills Estate",
-      image: "/assets/dp.jpg",
-    },
-    {
-      name: "Maha Al Omari ",
-      expertise: "Property Consultant",
-      areas: " Nad Al Sheba ",
-      image: "/assets/dp.jpg",
-    },
-    {
-      name: "Abdul Al-Neama ",
-      expertise: "Managing Director",
-      areas: " Nad Al Sheba ",
-      image: "/assets/dp.jpg",
-    },
-  ];
+  const { data: agents, isPending } = useGetAllAgent();
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <section
@@ -62,7 +49,7 @@ const AboutUs = () => {
           {/* Right Image */}
           <div className="lg:w-1/2 mt-6 lg:mt-0">
             <img
-              src="/assets/about.jpg"
+              src="/assets/about.webp"
               alt="About Us"
               className="rounded-lg w-full max-h-[500px] object-cover"
             />
@@ -77,39 +64,64 @@ const AboutUs = () => {
           <div className="w-[100px] h-1 bg-primary mx-auto mb-10 rounded-full" />
 
           {/* Agent Cards Grid - Responsive Layout */}
-          <div className="flex justify-center items-start flex-wrap w-full mt-10">
-            {agents.map((agent, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center group border-0 border-accent p-2 rounded-lg"
+          {isPending ? (
+            <div>
+              <Skeleton className="w-full h-100 rounded-lg mb-4" />
+            </div>
+          ) : (
+            <motion.div 
+              className="flex justify-center items-start flex-wrap w-full mt-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {(showAll ? agents : agents.slice(0, 3)).map((agent: AgentResponse) => (
+                <motion.div
+                  key={agent._id}
+                  className="flex flex-col items-center group border-0 border-accent p-2 rounded-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Circular Profile Image */}
+                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary shadow-lg hover:shadow-accent/30 transition-all duration-300">
+                    <img
+                      src={agent.profile_pic}
+                      alt={agent.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Agent Details Card */}
+                  <div className="bg-text/60 w-[300px] h-[150px] mt-4 rounded-lg p-4 text-center shadow-md hover:shadow-accent/10 transition-all duration-300">
+                    <h3 className="text-xl font-bold text-ltext">
+                      {agent.name}
+                    </h3>
+                    <p className="text-primary font-medium mt-1 line-clamp-2">
+                      {agent.expertise[0]}
+                    </p>
+                    <p className="text-ltext text-sm mt-1 line-clamp-2">
+                      <span className="font-semibold">Area:</span> {agent.area}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+
+          {/* Show More Button */}
+          {agents?.length > 3 && (
+            <div className="text-center mt-6">
+              <motion.button
+                onClick={() => setShowAll(!showAll)}
+                className="bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:bg-accent transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {/* Circular Profile Image */}
-                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary shadow-lg hover:shadow-accent/30 transition-all duration-300">
-                  <img
-                    src={agent.image}
-                    alt={agent.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Agent Details Card */}
-                <div className="bg-text/60 w-[300px] h-[150px] mt-4 rounded-lg p-4 text-center shadow-md hover:shadow-accent/10 transition-all duration-300">
-                  <h3 className="text-xl font-bold text-ltext">{agent.name}</h3>
-                  <p className="text-primary font-medium mt-1 line-clamp-2">
-                    {agent.expertise}
-                  </p>
-                  <p className="text-ltext text-sm mt-1 line-clamp-2">
-                    <span className="font-semibold">Area:</span> {agent.areas}
-                  </p>
-                </div>
-
-                {/* Dotted Line Below Card */}
-                {/* <div className="w-full h-4 flex justify-center items-center mt-4">
-                  <div className="w-3/4 border-b border-dashed border-ltext/30"></div>
-                </div> */}
-              </div>
-            ))}
-          </div>
+                {showAll ? "Show Less" : "Show More"}
+              </motion.button>
+            </div>
+          )}
         </div>
       </div>
     </section>

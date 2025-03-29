@@ -85,7 +85,7 @@ const ViewBlog = () => {
             </h1>
             {/* Meta Data */}
             <p className="text-gray-500 text-sm mt-2">
-              Published on {new Date(blog.created_at).toLocaleDateString()}
+              Published on {new Date(blog?.createdAt).toLocaleDateString()}
             </p>
             {/* Cover Image */}
             {blog.coverImage && (

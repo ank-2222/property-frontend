@@ -117,7 +117,7 @@ const ExploreProjects = () => {
               className="bg-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 max-w-[400px] h-[450px]"
             >
               <img
-                src={property.images[0] || "/placeholder.jpg"}
+                src={property.images[0] }
                 alt={property.title}
                 className="w-full h-[250px] object-cover"
               />

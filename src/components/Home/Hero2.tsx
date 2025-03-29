@@ -86,9 +86,9 @@ const Hero2 = () => {
         {/* Right Parallax Image */}
         <div className="w-full md:w-1/2 relative ">
           <img
-            src="/assets/herobg6.jpg"
+            src="/assets/herobg6.webp"
             alt="Luxury Home"
-            className="max-w-[450px]  2xl:max-w-[550px] 3xl:max-w-[800px]  rounded-t-full bg-background shadow-2xl shadow-dbackground absolute -bottom-15 left-10 xl:left-30 z-[998] "
+            className="max-w-[450px]  2xl:max-w-[500px] 3xl:max-w-[800px]  rounded-t-full bg-background shadow-2xl shadow-dbackground absolute -bottom-15 left-10 xl:left-30 z-[998] "
           />
         </div>
       </div>

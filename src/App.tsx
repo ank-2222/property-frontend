@@ -6,14 +6,15 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
-import Project from "./pages/Project";
+// import Project from "./pages/Project";
 import Properties from "./pages/Properties";
 import ViewBlog from "./pages/ViewBlog";
 import BlogList from "./pages/BlogList";
-import Sales from "./pages/Sales";
-import Rental from "./pages/Rental";
-import Commercial from "./pages/Commercial";
+// import Sales from "./pages/Sales";
+// import Rental from "./pages/Rental";
+// import Commercial from "./pages/Commercial";
 import PrivacyPolicy from "./pages/Privacypolicy";
+import Faq from "./pages/Faq";
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -39,15 +40,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/faq" element={<Faq />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/project" element={<Project />} />
+        {/* <Route path="/project" element={<Project />} /> */}
         <Route path="/properties" element={<Properties />} />
         <Route path="/blogs" element={<BlogList />} />
         <Route path="/blogs/:id" element={<ViewBlog />} />
-        <Route path="/sales" element={<Sales />} />
-        <Route path="/rental" element={<Rental />} />
-        <Route path="/commercial" element={<Commercial />} />
+        {/* <Route path="/sales" element={<Sales />} /> */}
+        {/* <Route path="/rental" element={<Rental />} /> */}
+        {/* <Route path="/commercial" element={<Commercial />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
 

@@ -5,6 +5,7 @@ import { Button } from "./button";
 // import { RiWhatsappFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import EvaluateForm from "../Home/EvaluateForm";
+import Logo from "./logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,10 +92,11 @@ const Navbar = () => {
         >
           Monarch Hill Real Estate
         </Link> */}
-        <img
+        {/* <img
         src={"/assets/logo.jpeg"}
         className="w-[200px]  "
-        />
+        /> */}
+        <Logo size="xs" />
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-6">

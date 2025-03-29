@@ -39,7 +39,7 @@ const AboutUs2 = () => {
         {/* Right Side - Image */}
         <div className="relative w-full h-[400px]">
           <img
-            src="/assets/herobg.jpg"
+            src="/assets/herobg.webp"
             alt="Luxury UAE Property"
             className="rounded-lg shadow-lg object-cover w-full h-full"
           />

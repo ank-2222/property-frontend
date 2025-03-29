@@ -15,6 +15,6 @@ export interface Blog {
 
 export interface BlogResponse extends Blog {
     _id: string;
-    created_at: string;
-    updated_at: string;
+    createdAt: string;
+    updatedAt: string;
 }

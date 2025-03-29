@@ -8,3 +8,4 @@ export const getPropertyByIdApi = (propertyId: string) => `${API_VAR}/v1/propert
 export const getBlogsApi = `${API_VAR}/v1/blog`;
 export const getBlogByIdApi = (blogId: string) => `${API_VAR}/v1/blog/${blogId}`;
 
+export const getAgentsApi = `${API_VAR}/v1/agent`;

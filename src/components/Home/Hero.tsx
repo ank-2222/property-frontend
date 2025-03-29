@@ -1,14 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Home, Hotel, House, MapPin, Search } from "lucide-react";
+import { Home, Hotel,  MapPin, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "/assets/hero1.jpg",
-  "/assets/hero2.jpg",
-  "/assets/hero3.jpg",
-  "/assets/hero4.jpg",
+  "/assets/hero1.webp",
+  "/assets/hero2.webp",
+  "/assets/hero3.webp",
+  "/assets/hero4.webp",
 ];
 
 const Hero = () => {
@@ -93,7 +93,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             Find your <motion.span 
-              className="text-primary"
+              className="text-dbackground"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1 }}
@@ -130,7 +130,7 @@ const Hero = () => {
               />
             </div>
             <motion.button
-              className="flex justify-center items-center gap-x-1 bg-primary py-2 px-3 sm:px-4 
+              className="flex justify-center items-center gap-x-1 bg-dbackground py-2 px-3 sm:px-4 
                 rounded-[0.4rem] text-ltext font-medium whitespace-nowrap text-sm sm:text-base ml-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -151,9 +151,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 1.6 }}
         >
           {[
-            { to: "/sales", icon: <Hotel size={18} />, text: "Sales" },
-            { to: "/rental", icon: <Home size={18} />, text: "Rental" },
-            { to: "/commercial", icon: <House size={18} />, text: "Commercial" }
+            { to: "/properties?listing_type=sale", icon: <Hotel size={18} />, text: "Sales" },
+            { to: "/properties?listing_type=rent", icon: <Home size={18} />, text: "Rental" },
+            // { to: "/commercial", icon: <House size={18} />, text: "Commercial" }
           ].map((item, index) => (
             <motion.div
               key={index}

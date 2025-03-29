@@ -22,6 +22,7 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 const Properties: React.FC = () => {
   const [searchParams] = useSearchParams();
   const queryLocation = searchParams.get("location") || "";
+  const listing_type = searchParams.get("listing_type") || "";
 
   const [filters, setFilters] = useState({
     page: 1,
@@ -37,7 +38,7 @@ const Properties: React.FC = () => {
     bathrooms: undefined,
     furnished: undefined,
     property_type: "",
-    listing_type: "",
+    listing_type: listing_type,
     sortBy: "price",
     sortOrder: "asc" as "asc" | "desc",
   });
