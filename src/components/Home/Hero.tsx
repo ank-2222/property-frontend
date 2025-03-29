@@ -9,10 +9,10 @@ const images = [
   // "/assets/hero2.webp",
   // "/assets/hero3.webp",
   // "/assets/hero4.webp",
-  "/assets/img2.PNG",
-  "/assets/img3.PNG",
-  "/assets/img4.PNG",
-  "/assets/img5.PNG",
+  "/assets/img2.webp",
+  "/assets/img3.webp",
+  "/assets/img4.webp",
+  "/assets/img5.webp",
 ];
 
 const Hero = () => {
@@ -61,7 +61,7 @@ const Hero = () => {
           <img
             src={images[currentIndex]}
             alt="Hero Background"
-            className="w-full h-full object-fill aspect-video  "
+            className="w-full h-full object-cover lg:object-fill aspect-video  "
           />
         </motion.div>
       </AnimatePresence>
@@ -149,7 +149,7 @@ const Hero = () => {
 
         {/* Property Type Buttons with staggered animations */}
         <motion.div 
-          className=" flex-row justify-center items-center gap-3 sm:gap-4 hidden md:flex"
+          className=" flex-row justify-center items-center gap-3 sm:gap-4 flex"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.6 }}
