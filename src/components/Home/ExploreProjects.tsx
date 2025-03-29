@@ -5,6 +5,7 @@ const slides = [
     title: "Expo Golf Villas 5",
     button: "Whatsapp Us",
     link:"https://wa.me/+971501166808",
+    description:"Hi these are the photos from the official project called SENSIA in Maritime City by the developer BEYOND",
     // link:"https://properties.emaar.com/en/properties/expo-golf-villas-phase-v",
     src: "/assets/expogolf.webp",
   },
