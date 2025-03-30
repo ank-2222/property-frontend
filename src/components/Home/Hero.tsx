@@ -12,7 +12,7 @@ const images = [
   "/assets/img2.webp",
   "/assets/img3.webp",
   "/assets/img4.webp",
-  "/assets/img5.webp",
+  "/assets/img1.webp",
 ];
 
 const Hero = () => {
